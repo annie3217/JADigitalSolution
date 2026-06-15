@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JA Digital Solutions - About</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=600;700&family=Raleway:wght=300;400;500;600&family=Roboto:wght=400;500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Animate On Scroll (AOS) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1E293B',
+            accent: '#38BDF8',
+            neutralBg: '#F1F5F9',
+          },
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+            raleway: ['Raleway', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Hero Zoom-out Animation */
+    @keyframes zoomOut {
+      0% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    .animate-zoom-out {
+      animation: zoomOut 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Mobile Menu Max-Height Transitions */
+    #mobile-menu {
+      max-height: 0;
+      transition: max-height 0.4s ease-in-out;
+    }
+    #mobile-menu.open {
+      max-height: 300px;
+    }
+  </style>
+</head>
+<body class="bg-neutralBg text-primary font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Sticky Navigation Header -->
+  <header class="sticky top-0 z-50 bg-primary/95 backdrop-blur-md shadow-md transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-poppins font-bold text-white text-xl tracking-wide flex items-center gap-2">
+        <span class="text-accent"><i class="fa-solid fa-cubes"></i></span> JA Digital
+      </a>
+      
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex items-center space-x-8 font-raleway font-medium text-sm">
+        <a href="index.html" class="text-white/90 hover:text-accent transition-colors duration-200">Home</a>
+        <a href="shop.html" class="text-white/90 hover:text-accent transition-colors duration-200">Shop Now</a>
+        <a href="contact.html" class="text-white/90 hover:text-accent transition-colors duration-200">Contact Us</a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="md:hidden bg-primary overflow-hidden border-t border-white/10">
+      <div class="px-6 py-4 flex flex-col space-y-4 font-raleway font-medium text-base">
+        <a href="index.html" class="text-white/90 hover:text-accent transition-colors duration-200">Home</a>
+        <a href="shop.html" class="text-white/90 hover:text-accent transition-colors duration-200">Shop Now</a>
+        <a href="contact.html" class="text-white/90 hover:text-accent transition-colors duration-200">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner (100% visible image layer matching index configuration) -->
+  <div class="relative w-full h-[45vh] md:h-[60vh] overflow-hidden bg-white">
+    <img src="static/about.png" alt="JA Digital Solutions About Image" class="w-full h-full object-cover animate-zoom-out opacity-100">
+  </div>
+
+  <!-- About Page Subtitle Context Layer -->
+  <div class="bg-white text-center py-12 px-6 border-b border-slate-200/60" data-aos="fade-up" data-aos-duration="800">
+    <h1 class="font-poppins font-bold text-4xl md:text-5xl text-primary tracking-tight">
+      Behind the <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-emerald-500">Digital Blueprints</span>
+    </h1>
+    <p class="font-raleway text-slate-600 text-base md:text-xl mt-4 max-w-2xl mx-auto font-medium">
+      A mission to democratize digital careers and give you the infrastructure to build a high-earning online business.
+    </p>
+  </div>
+
+  <!-- Company Story Section -->
+  <section class="py-20 px-6 max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+    <div class="text-center mb-12">
+      <h2 class="font-poppins font-bold text-3xl text-primary inline-block relative pb-4">
+        Our Story
+        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-accent rounded-full"></span>
+      </h2>
+    </div>
+    
+    <div class="bg-white/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-sm border border-white/60 space-y-6 text-slate-700 font-raleway text-base md:text-lg leading-relaxed font-light">
+      <p>
+        <strong class="font-medium text-primary">JA Digital</strong> was founded with a clear, heartfelt conviction: that financial and professional independence shouldn't require a corporate budget or a computer science degree. Established on September 21, 2025, by JA Necesario, this platform was built to solve a major burden for everyday freelancers, students, and emerging digital professionals—the overwhelming chaos of managing an online business alone.
+      </p>
+      <p>
+        What started as a collection of high-impact tools has quickly evolved into a trusted resource hub. Through intentional focus, creative innovation, and a steadfast commitment to practical utility, JA Digital designs the operational blueprints that help remote professionals turn skills into sustainable income.
+      </p>
+      <p>
+        We aren't just selling digital assets. We are building the stepping stones toward a comprehensive digital ecosystem—inspiring you to dream bigger, take decisive action, and run your daily operations with absolute confidence.
+      </p>
+      
+      <div class="pt-6 border-t border-slate-200/60 text-center">
+        <p class="font-poppins font-bold text-xl md:text-2xl text-accent italic tracking-tight">
+          "We don't just build tools—we build the pathways and infrastructure for lasting professional freedom."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision Section (Grid Layout Matching Architecture Style) -->
+  <section class="py-16 px-6 max-w-6xl mx-auto w-full">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Mission -->
+      <div class="bg-primary text-white p-8 md:p-10 rounded-2xl shadow-lg flex flex-col justify-between border border-white/5" data-aos="fade-up" data-aos-delay="100">
+        <div>
+          <div class="flex items-center gap-3 text-accent mb-6">
+            <i class="fa-solid fa-bullseye text-2xl"></i>
+            <h2 class="font-poppins font-bold text-2xl tracking-wide">Our Mission</h2>
+          </div>
+          <p class="font-raleway font-light text-base md:text-lg text-white/80 leading-relaxed italic">
+            “To democratize digital careers by providing everyday freelancers and students with the premium operational tools, knowledge, and infrastructure required to build a sustainable, high-earning online business.”
+          </p>
+        </div>
+      </div>
+
+      <!-- Vision -->
+      <div class="bg-primary text-white p-8 md:p-10 rounded-2xl shadow-lg flex flex-col justify-between border border-white/5" data-aos="fade-up" data-aos-delay="200">
+        <div>
+          <div class="flex items-center gap-3 text-accent mb-6">
+            <i class="fa-solid fa-eye text-2xl"></i>
+            <h2 class="font-poppins font-bold text-2xl tracking-wide">Our Vision</h2>
+          </div>
+          <p class="font-raleway font-light text-base md:text-lg text-white/80 leading-relaxed italic">
+            “To become the global home for the freelance economy — transitioning from a vital digital resource hub into the definitive software application that runs the day-to-day operations of remote professionals worldwide.”
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Background & Expertise Component -->
+  <section class="py-16 px-6 max-w-5xl mx-auto w-full" data-aos="fade-up">
+    <div class="text-center mb-12">
+      <h2 class="font-poppins font-bold text-3xl text-primary inline-block relative pb-4">
+        Background & Expertise
+        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-accent rounded-full"></span>
+      </h2>
+    </div>
+
+    <div class="bg-white/60 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-sm border border-slate-200/80">
+      <div class="mb-10">
+        <h3 class="font-poppins font-bold text-xl text-primary flex items-center gap-2 mb-3">
+          <span class="text-accent text-lg"><i class="fa-solid fa-user-tie"></i></span> The Founder
+        </h3>
+        <p class="font-raleway font-light text-slate-700 leading-relaxed text-base md:text-lg">
+          JA Digital was established by JA Necesario, a Computer and Communication Engineering graduate with a diverse professional background spanning administration, customer service, and academic support. Her unique intersection of technology and education allows her to seamlessly merge technical systems with user-friendly design. Rooted in faith and a deep passion for personal growth, she builds functional, stress-free digital tools designed to genuinely alleviate the operational burdens of independent creators.
+        </p>
+      </div>
+
+      <div class="border-t border-slate-200/60 pt-8">
+        <h3 class="font-poppins font-bold text-xl text-primary flex items-center gap-2 mb-4">
+          <span class="text-accent text-lg"><i class="fa-solid fa-star"></i></span> Core Specialization & Capabilities
+        </h3>
+        <p class="font-raleway font-light text-slate-700 leading-relaxed text-base md:text-lg mb-6">
+          To ensure you have everything you need to scale, JA Digital focuses on the core pillars of freelance success:
+        </p>
+        
+        <!-- Capabilities Sublist -->
+        <ul class="space-y-4 font-raleway text-slate-700 font-light text-sm md:text-base">
+          <li class="flex items-start gap-3">
+            <span class="text-accent mt-1 text-xs"><i class="fa-solid fa-circle-check"></i></span>
+            <span><strong class="font-semibold text-primary">Operational Infrastructure:</strong> Structuring starter kits, trackers, and templates that streamline your daily workflow, maximize efficiency, and organize your backend business operations.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent mt-1 text-xs"><i class="fa-solid fa-circle-check"></i></span>
+            <span><strong class="font-semibold text-primary">Web Design & Development:</strong> Crafting clean, modern, and highly responsive layouts that help individuals establish a premium online presence without the premium price tag.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent mt-1 text-xs"><i class="fa-solid fa-circle-check"></i></span>
+            <span><strong class="font-semibold text-primary">Content Strategy & Clarity:</strong> Bringing absolute structure, logic, and engaging narratives to digital educational resources and planners so you can learn without the fluff.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-accent mt-1 text-xs"><i class="fa-solid fa-circle-check"></i></span>
+            <span><strong class="font-semibold text-primary">End-to-End Support:</strong> Delivering seamless experiences, ensuring every digital product is immediately actionable, easy to download, and ready to implement.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values Section -->
+  <section class="py-16 px-6 max-w-7xl mx-auto w-full" data-aos="fade-up">
+    <div class="text-center mb-16">
+      <h2 class="font-poppins font-bold text-3xl text-primary inline-block relative pb-4">
+        Our Core Values
+        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-accent rounded-full"></span>
+      </h2>
+    </div>
+
+    <!-- Responsive Values Display Flex Grid matching Card Elevates -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      
+      <!-- Empowerment -->
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/40 hover:-translate-y-1.5 transition-transform duration-300">
+        <div class="text-accent text-xl mb-3"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h4 class="font-poppins font-bold text-base text-primary mb-2">Empowerment</h4>
+        <p class="font-raleway text-slate-600 text-sm leading-relaxed font-light">We build tools that give people control over their time and income.</p>
+      </div>
+
+      <!-- Practicality -->
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/40 hover:-translate-y-1.5 transition-transform duration-300">
+        <div class="text-accent text-xl mb-3"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h4 class="font-poppins font-bold text-base text-primary mb-2">Practicality</h4>
+        <p class="font-raleway text-slate-600 text-sm leading-relaxed font-light">No fluff. Every guide, template, and spreadsheet must solve a real, immediate business problem.</p>
+      </div>
+
+      <!-- Accessibility -->
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/40 hover:-translate-y-1.5 transition-transform duration-300">
+        <div class="text-accent text-xl mb-3"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+        <h4 class="font-poppins font-bold text-base text-primary mb-2">Accessibility</h4>
+        <p class="font-raleway text-slate-600 text-sm leading-relaxed font-light">Designing premium resources that are affordable for students and beginners, yet powerful enough for scaling agencies.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Quick Links Section (Replicating Dark Index Background Matrix & Button Scaling) -->
+  <section class="bg-primary text-white py-24 px-6 mt-auto">
+    <div class="max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+      <h2 class="font-poppins font-bold text-3xl md:text-4xl mb-4 tracking-tight">Explore More</h2>
+      <p class="font-raleway text-white/70 max-w-xl mx-auto mb-10 text-base md:text-lg font-light">
+        Discover free resources, inspiring insights, and blueprints designed to elevate your journey.
+      </p>
+      
+      <!-- Interactive Grid Buttons (Adjusted for 3 items) -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto font-raleway font-semibold text-sm tracking-wide">
+        <a href="resources.html" class="bg-accent text-white py-3.5 px-6 rounded-xl hover:bg-sky-500 shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-2">
+          <i class="fa-solid fa-gift opacity-80"></i> Free Resources
+        </a>
+        <a href="blog.html" class="bg-accent text-white py-3.5 px-6 rounded-xl hover:bg-sky-500 shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-2">
+          <i class="fa-solid fa-newspaper opacity-80"></i> Blog &amp; Insights
+        </a>
+        <a href="starter-kits.html" class="bg-accent text-white py-3.5 px-6 rounded-xl hover:bg-sky-500 shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-2">
+          <i class="fa-solid fa-rocket opacity-80"></i> Starter Kits
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Context Interface Component -->
+  <footer class="bg-slate-950 text-white/50 text-xs py-6 border-t border-white/5 text-center font-raleway">
+    <p>&copy; 2026 JA Digital Solutions. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts for Dynamic Components and Navigation Behavior -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize Scroll Animations
+    AOS.init({
+      once: true,
+      mirror: false
+    });
+
+    // Mobile Hamburger Menu Toggle Trigger
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const isOpen = mobileMenu.classList.contains('open');
+      menuBtn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars-staggered"></i>';
+    });
+  </script>
+</body>
+</html>

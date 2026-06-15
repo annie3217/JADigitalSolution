@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JA Digital Solutions - Blog &amp; Insights</title>
+  <meta name="description" content="Explore personal growth, digital tools, faith-driven leadership insights, and minimal tech tutorials from JA Digital Solutions.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome for Clean Uniform Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Animate On Scroll (AOS) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366f1',
+            primaryHover: '#4f46e5',
+            accent: '#38bdf8',
+            bgMain: '#0b0f19',
+            bgCard: '#131c2e',
+            bgCardHover: '#19253f',
+            textMain: '#f8fafc',
+            textMuted: '#94a3b8',
+            textLight: '#64748b'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            jakarta: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Mobile Menu Drawer Animation Mechanics */
+    #mobile-menu {
+      max-height: 0;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #mobile-menu.open {
+      max-height: 300px;
+    }
+  </style>
+</head>
+<body class="bg-bgMain text-textMain font-sans antialiased min-h-screen flex flex-col bg-[radial-gradient(circle_at_10%_20%,rgba(99,102,241,0.04)_0%,transparent_40%),radial-gradient(circle_at_90%_80%,rgba(56,189,248,0.04)_0%,transparent_40%)]">
+
+  <!-- Sticky Glassmorphic Navigation Header Component -->
+  <header class="sticky top-0 z-50 bg-bgMain/90 backdrop-blur-md border-b border-white/[0.06] shadow-sm">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-jakarta font-bold text-textMain text-lg tracking-tight flex items-center gap-2">
+        <span class="text-accent"><i class="fa-solid fa-cubes"></i></span> JA Digital
+      </a>
+      
+      <!-- Desktop Menu Link Map -->
+      <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="index.html" class="text-textMuted hover:text-textMain transition-colors duration-200">Home</a>
+        <a href="shop.html" class="text-textMuted hover:text-textMain transition-colors duration-200">Shop Now</a>
+        <a href="about.html" class="text-textMuted hover:text-textMain transition-colors duration-200">About Us</a>
+      </div>
+
+      <!-- Mobile Menu Hamburger Trigger Button -->
+      <button id="menu-btn" class="md:hidden text-textMain focus:outline-none text-xl" aria-label="Toggle Navigation Layout">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation Dropdown Core Panel -->
+    <div id="mobile-menu" class="md:hidden bg-bgCard overflow-hidden border-b border-white/[0.06]">
+      <div class="px-6 py-4 flex flex-col space-y-3 font-medium text-sm">
+        <a href="index.html" class="text-textMuted hover:text-textMain transition-colors duration-200">Home</a>
+        <a href="shop.html" class="text-textMuted hover:text-textMain transition-colors duration-200">Shop Now</a>
+        <a href="about.html" class="text-textMuted hover:text-textMain transition-colors duration-200">About Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Central Blog Content Directory Canvas -->
+  <main class="max-w-6xl mx-auto w-full px-6 py-16 flex-grow space-y-16">
+    
+    <!-- Blog Section Core Identity Header -->
+    <header class="space-y-3 max-w-2xl" data-aos="fade-right" data-aos-duration="800">
+      <h1 class="font-jakarta font-extrabold text-3xl md:text-4xl tracking-tight bg-gradient-to-r from-textMain via-primary to-accent bg-clip-text text-transparent">
+        Blog &amp; Insights
+      </h1>
+      <p class="text-textMuted text-sm md:text-base font-normal leading-relaxed">
+        Actionable systems, practical digital tools, and faith-centered modern leadership perspectives.
+      </p>
+    </header>
+
+    <!-- Content Categorization Grid Layout Loop -->
+    <div class="space-y-16">
+
+      <!-- Category Element Block: Personal Growth -->
+      <section class="space-y-6" data-aos="fade-up" data-aos-duration="800">
+        <div class="border-b border-white/[0.06] pb-3">
+          <h2 class="font-jakarta font-bold text-lg md:text-xl text-textMain tracking-tight flex items-center gap-2">
+            <span class="text-primary text-sm"><i class="fa-solid fa-arrow-trend-up"></i></span> Personal Growth &amp; Productivity
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Article Node 1 -->
+          <article class="bg-bgCard border border-white/[0.06] border-l-4 border-l-emerald-500 rounded-xl p-5 flex flex-col justify-between gap-6 transition-all duration-300 hover:bg-bgCardHover hover:border-l-primary hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="font-jakarta font-semibold text-[15px] leading-snug"><a href="#" class="hover:text-accent transition-colors duration-200">5 Daily Habits to Stay Productive with Poor Internet</a></h3>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-textMuted flex items-center gap-1.5"><i class="fa-regular fa-clock"></i> 4 Min Read • Productivity</div>
+          </article>
+          <!-- Article Node 2 -->
+          <article class="bg-bgCard border border-white/[0.06] border-l-4 border-l-emerald-500 rounded-xl p-5 flex flex-col justify-between gap-6 transition-all duration-300 hover:bg-bgCardHover hover:border-l-primary hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="font-jakarta font-semibold text-[15px] leading-snug"><a href="#" class="hover:text-accent transition-colors duration-200">Mindset Shifts That Helped Me Build JA Digital Solutions</a></h3>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-textMuted flex items-center gap-1.5"><i class="fa-regular fa-clock"></i> 6 Min Read • Growth</div>
+          </article>
+          <!-- Article Node 3 -->
+          <article class="bg-bgCard border border-white/[0.06] border-l-4 border-l-emerald-500 rounded-xl p-5 flex flex-col justify-between gap-6 transition-all duration-300 hover:bg-bgCardHover hover:border-l-primary hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="font-jakarta font-semibold text-[15px] leading-snug"><a href="#" class="hover:text-accent transition-colors duration-200">How to Balance Work, Faith, and Lifelong Learning</a></h3>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-textMuted flex items-center gap-1.5"><i class="fa-regular fa-clock"></i> 5 Min Read • Balance</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Category Element Block: Digital Tools -->
+      <section class="space-y-6" data-aos="fade-up" data-aos-duration="800">
+        <div class="border-b border-white/[0.06] pb-3">
+          <h2 class="font-jakarta font-bold text-lg md:text-xl text-textMain tracking-tight flex items-center gap-2">
+            <span class="text-accent text-sm"><i class="fa-solid fa-screwdriver-wrench"></i></span> Digital Tools &amp; Resources
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Article Node 1 -->
+          <article class="bg-bgCard border border-white/[0.06] border-l-4 border-l-emerald-500 rounded-xl p-5 flex flex-col justify-between gap-6 transition-all duration-300 hover:bg-bgCardHover hover:border-l-primary hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="font-jakarta font-semibold text-[15px] leading-snug"><a href="#" class="hover:text-accent transition-colors duration-200">Best Free Tools for Remote Students &amp; Entrepreneurs</a></h3>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-textMuted flex items-center gap-1.5"><i class="fa-solid fa-toolbox"></i> Toolkit • Free Resources</div>
+          </article>
+          <!-- Article Node 2 -->
+          <article class="bg-bgCard border border-white/[0.06] border-l-4 border-l-emerald-500 rounded-xl p-5 flex flex-col justify-between gap-6 transition-all duration-300 hover:bg-bgCardHover hover:border-l-primary hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="font-jakarta font-semibold text-[15px] leading-snug"><a href="#" class="hover:text-accent transition-colors duration-200">How to Use Google Sheets as Your Business Dashboard</a></h3>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-textMuted flex items-center gap-1.5"><i class="fa-solid fa-chart-line"></i> Systems • Dashboard Guide</div>
+          </article>
+          <!-- Article Node 3 -->
+          <article class="bg-bgCard border border-white/[0.06] border-l-4 border-l-emerald-500 rounded-xl p-5 flex flex-col justify-between gap-6 transition-all duration-300 hover:bg-bgCardHover hover:border-l-primary hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="font-jakarta font-semibold text-[15px] leading-snug"><a href="#" class="hover:text-accent transition-colors duration-200">Top Custom Website Layout Templates for Beginners</a></h3>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-textMuted flex items-center gap-1.5"><i class="fa-solid fa-code"></i> Code • UI Layouts</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Category Element Block: Christian-Inspired Insights -->
+      <section class="space-y-6" data-aos="fade-up" data-aos-duration="800">
+        <div class="border-b border-white/[0.06] pb-3">
+          <h2 class="font-jakarta font-bold text-lg md:text-xl text-textMain tracking-tight flex items-center gap-2">
+            <span class="text-amber-400 text-sm"><i class="fa-solid fa-heart"></i></span> Christian-Inspired Insights
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Article Node 1 -->
+          <article class="bg-bgCard border border-white/[0.06] border-l-4 border-l-emerald-500 rounded-xl p-5 flex flex-col justify-between gap-6 transition-all duration-300 hover:bg-bgCardHover hover:border-l-primary hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="font-jakarta font-semibold text-[15px] leading-snug"><a href="#" class="hover:text-accent transition-colors duration-200">Faith in Business: Why My Company Is More Than Just a Job</a></h3>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-textMuted flex items-center gap-1.5"><i class="fa-solid fa-dove"></i> Stewardship • Core Value</div>
+          </article>
+          <!-- Article Node 2 -->
+          <article class="bg-bgCard border border-white/[0.06] border-l-4 border-l-emerald-500 rounded-xl p-5 flex flex-col justify-between gap-6 transition-all duration-300 hover:bg-bgCardHover hover:border-l-primary hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="font-jakarta font-semibold text-[15px] leading-snug"><a href="#" class="hover:text-accent transition-colors duration-200">Bible Verses That Inspire Daily Professional Focus</a></h3>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-textMuted flex items-center gap-1.5"><i class="fa-solid fa-book-open"></i> Encouragement • Study</div>
+          </article>
+          <!-- Article Node 3 -->
+          <article class="bg-bgCard border border-white/[0.06] border-l-4 border-l-emerald-500 rounded-xl p-5 flex flex-col justify-between gap-6 transition-all duration-300 hover:bg-bgCardHover hover:border-l-primary hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="font-jakarta font-semibold text-[15px] leading-snug"><a href="#" class="hover:text-accent transition-colors duration-200">Trusting God While Building Your Career and Dreams</a></h3>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-textMuted flex items-center gap-1.5"><i class="fa-solid fa-anchor"></i> Faith • Growth Tracker</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Category Element Block: Guides & Tutorials -->
+      <section class="space-y-6" data-aos="fade-up" data-aos-duration="800">
+        <div class="border-b border-white/[0.06] pb-3">
+          <h2 class="font-jakarta font-bold text-lg md:text-xl text-textMain tracking-tight flex items-center gap-2">
+            <span class="text-indigo-400 text-sm"><i class="fa-solid fa-graduation-cap"></i></span> Guides &amp; Tutorials
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Article Node 1 -->
+          <article class="bg-bgCard border border-white/[0.06] border-l-4 border-l-emerald-500 rounded-xl p-5 flex flex-col justify-between gap-6 transition-all duration-300 hover:bg-bgCardHover hover:border-l-primary hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="font-jakarta font-semibold text-[15px] leading-snug"><a href="#" class="hover:text-accent transition-colors duration-200">Step-by-Step System Building with Digital Planners &amp; Notion</a></h3>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-textMuted flex items-center gap-1.5"><i class="fa-solid fa-fire"></i> Tutorial • Notion Layout</div>
+          </article>
+          <!-- Article Node 2 -->
+          <article class="bg-bgCard border border-white/[0.06] border-l-4 border-l-emerald-500 rounded-xl p-5 flex flex-col justify-between gap-6 transition-all duration-300 hover:bg-bgCardHover hover:border-l-primary hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="font-jakarta font-semibold text-[15px] leading-snug"><a href="#" class="hover:text-accent transition-colors duration-200">Quick Design Tips for Clean User Interfaces &amp; Minimalism</a></h3>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-textMuted flex items-center gap-1.5"><i class="fa-solid fa-palette"></i> Minimal UI • Web Design</div>
+          </article>
+          <!-- Article Node 3 -->
+          <article class="bg-bgCard border border-white/[0.06] border-l-4 border-l-emerald-500 rounded-xl p-5 flex flex-col justify-between gap-6 transition-all duration-300 hover:bg-bgCardHover hover:border-l-primary hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="font-jakarta font-semibold text-[15px] leading-snug"><a href="#" class="hover:text-accent transition-colors duration-200">How to Securely Host and Sell Assets via GitHub &amp; Netlify</a></h3>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-textMuted flex items-center gap-1.5"><i class="fa-solid fa-rocket"></i> Deployment • Web Arch</div>
+          </article>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Complete Standard Footnote System Module -->
+  <footer class="bg-bgCard border-t border-white/[0.06] text-xs font-sans text-textMuted mt-auto">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Core Meta Identity Row -->
+      <div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+        <p class="text-textLight font-medium">&copy; 2026 JA Digital Solutions. All rights reserved.</p>
+        <span class="hidden md:inline text-white/[0.06]">|</span>
+        <p class="text-textLight">Cebu City, Philippines</p>
+      </div>
+
+      <!-- Clean Structural Resource Links -->
+      <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-medium tracking-wide text-textMuted" aria-label="Footer system layout utilities">
+        <a href="shop.html" class="hover:text-accent transition-colors duration-200 flex items-center gap-1.5"><i class="fa-solid fa-bag-shopping text-[10px]"></i> Shop</a>
+        <a href="resources.html" class="hover:text-accent transition-colors duration-200 flex items-center gap-1.5"><i class="fa-solid fa-layer-group text-[10px]"></i> Resources</a>
+        <a href="contact.html" class="hover:text-accent transition-colors duration-200 flex items-center gap-1.5"><i class="fa-solid fa-envelope text-[10px]"></i> Contact</a>
+      </nav>
+
+    </div>
+  </footer>
+
+  <!-- Scripts for Dynamic UI Components -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize Scroll Animations Layer
+    AOS.init({
+      once: true,
+      mirror: false
+    });
+
+    // Mobile Hamburger Dropdown Action
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const isOpen = mobileMenu.classList.contains('open');
+      menuBtn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars-staggered"></i>';
+    });
+  </script>
+</body>
+</html>

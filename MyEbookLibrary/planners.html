@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JA Digital Solutions - Planner Library</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Raleway:wght@300;400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1E293B',
+            accent: '#8B5CF6', /* Distinct deep violet accent for planners */
+            neutralBg: '#F1F5F9',
+          },
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+            raleway: ['Raleway', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    #mobile-menu {
+      max-height: 0;
+      transition: max-height 0.4s ease-in-out;
+    }
+    #mobile-menu.open {
+      max-height: 300px;
+    }
+    .active-filter {
+      background-color: #8B5CF6 !important;
+      color: #FFFFFF !important;
+    }
+  </style>
+</head>
+<body class="bg-neutralBg text-primary font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Header Navigation -->
+  <header class="sticky top-0 z-50 bg-primary/95 backdrop-blur-md shadow-md transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-poppins font-bold text-white text-xl tracking-wide flex items-center gap-2">
+        <span class="text-accent"><i class="fa-solid fa-calendar-check"></i></span> JA Digital
+      </a>
+      
+      <div class="hidden md:flex items-center space-x-8 font-raleway font-medium text-sm">
+        <a href="../templates/about.html" class="text-white/90 hover:text-accent transition-colors duration-200">About Us</a>
+        <a href="../templates/shop.html" class="text-white/90 hover:text-accent transition-colors duration-200">Shop Now</a>
+        <a href="../templates/contact.html" class="text-white/90 hover:text-accent transition-colors duration-200">Contact Us</a>
+      </div>
+
+      <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="md:hidden bg-primary overflow-hidden border-t border-white/10">
+      <div class="px-6 py-4 flex flex-col space-y-4 font-raleway font-medium text-base">
+        <a href="../templates/about.html" class="text-white/90 hover:text-accent transition-colors duration-200">About Us</a>
+        <a href="../templates/shop.html" class="text-white/90 hover:text-accent transition-colors duration-200">Shop Now</a>
+        <a href="../templates/contact.html" class="text-white/90 hover:text-accent transition-colors duration-200">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section Header -->
+  <div class="bg-white text-center py-12 px-6 border-b border-slate-200/60" data-aos="fade-up" data-aos-duration="800">
+    <h1 class="font-poppins font-bold text-4xl md:text-5xl text-primary tracking-tight max-w-4xl mx-auto">
+      📅 Productivity <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">Digital Planners</span>
+    </h1>
+    <p class="font-raleway text-slate-600 text-base md:text-xl mt-4 max-w-3xl mx-auto font-medium leading-relaxed">
+      Organize tasks, track goals, structure schedules, and map layout milestones cleanly.
+    </p>
+  </div>
+
+  <!-- Main Content Layout Area -->
+  <main class="max-w-7xl mx-auto px-6 py-12 w-full flex-grow flex flex-col lg:flex-row gap-10">
+    
+    <!-- Sidebar Filter Panel Context -->
+    <aside class="w-full lg:w-64 shrink-0 flex flex-col gap-4" data-aos="fade-right">
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60">
+        <h2 class="font-poppins font-bold text-lg text-primary mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-filter text-accent"></i> Filter Tracks
+        </h2>
+        
+        <div class="flex flex-col space-y-1 font-raleway text-sm font-medium">
+          <button onclick="filterCategory('all')" id="btn-all" class="w-full text-left px-4 py-2.5 rounded-xl transition-all duration-200 bg-slate-100 hover:bg-slate-200/70 text-slate-700 active-filter">
+            All Planners
+          </button>
+          <button onclick="filterCategory('multi-client')" id="btn-multi-client" class="w-full text-left px-4 py-2.5 rounded-xl transition-all duration-200 hover:bg-slate-100 text-slate-600 flex items-center justify-between text-xs lg:text-sm">
+            <span>Daily Planners</span>
+            <i class="fa-solid fa-chevron-right text-[10px] opacity-50 ml-2"></i>
+          </button>
+          <button onclick="filterCategory('goal-milestone')" id="btn-goal-milestone" class="w-full text-left px-4 py-2.5 rounded-xl transition-all duration-200 hover:bg-slate-100 text-slate-600 flex items-center justify-between text-xs lg:text-sm">
+            <span>Goal Trackers</span>
+            <i class="fa-solid fa-chevron-right text-[10px] opacity-50 ml-2"></i>
+          </button>
+          <button onclick="filterCategory('time-blocking')" id="btn-time-blocking" class="w-full text-left px-4 py-2.5 rounded-xl transition-all duration-200 hover:bg-slate-100 text-slate-600 flex items-center justify-between text-xs lg:text-sm">
+            <span>Productivity Sheets</span>
+            <i class="fa-solid fa-chevron-right text-[10px] opacity-50 ml-2"></i>
+          </button>
+          <button onclick="filterCategory('content-calendar')" id="btn-content-calendar" class="w-full text-left px-4 py-2.5 rounded-xl transition-all duration-200 hover:bg-slate-100 text-slate-600 flex items-center justify-between text-xs lg:text-sm">
+            <span>Content Layouts</span>
+            <i class="fa-solid fa-chevron-right text-[10px] opacity-50 ml-2"></i>
+          </button>
+          <button onclick="filterCategory('project-milestone')" id="btn-project-milestone" class="w-full text-left px-4 py-2.5 rounded-xl transition-all duration-200 hover:bg-slate-100 text-slate-600 flex items-center justify-between text-xs lg:text-sm">
+            <span>Milestone Maps</span>
+            <i class="fa-solid fa-chevron-right text-[10px] opacity-50 ml-2"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Dynamic Card Display Section -->
+    <section class="flex-grow">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full" id="libraryGrid" data-aos="fade-up"></div>
+    </section>
+
+  </main>
+
+  <!-- Global Site Footer Layout -->
+  <footer class="bg-slate-950 text-white/50 text-xs py-6 border-t border-white/5 text-center font-raleway mt-auto">
+    <p>&copy; 2026 JA Digital Solutions. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, mirror: false });
+
+    // Mobile Navigation Drawer Toggle Mechanics
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const isOpen = mobileMenu.classList.contains('open');
+      menuBtn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars-staggered"></i>';
+    });
+
+    // Filtering Core Execution Engine
+    let currentFilter = 'all';
+
+    function displayPlanners() {
+      const grid = document.getElementById('libraryGrid');
+      const items = JSON.parse(localStorage.getItem('myBooks')) || [];
+      grid.innerHTML = "";
+
+      // Filtering matrix processing sequence
+      const filteredPlanners = items.filter(item => {
+        // Condition 1: Confirm the record matches the exact fileGroup scope for planners
+        if (item.fileGroup !== 'planners') return false;
+
+        // Condition 2: Filter specific sub-categories
+        if (currentFilter === 'all') return true;
+        return item.category === currentFilter;
+      });
+
+      // Handle Empty State Display
+      if (filteredPlanners.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-16 bg-white rounded-2xl border border-slate-200/60 p-8">
+            <i class="fa-solid fa-calendar-xmark text-slate-300 text-5xl mb-4"></i>
+            <p class="font-raleway text-slate-500 text-lg font-medium">No digital planners loaded under this filter view yet.</p>
+          </div>`;
+        return;
+      }
+
+      // Generate HTML planners cards interface grid
+      filteredPlanners.forEach(item => {
+        const fileRoute = item.pdfLink ? item.pdfLink : "#";
+        
+        const plannerCard = `
+          <a href="${fileRoute}" target="_blank" class="block group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/60 transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+            <div class="relative w-full aspect-[4/5] bg-slate-100 overflow-hidden">
+              <img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]" src="${item.cover}" alt="Cover of ${item.title}">
+              <div class="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span class="bg-primary/90 text-white font-raleway font-semibold px-4 py-2 rounded-xl backdrop-blur-sm shadow-md text-xs tracking-wider">OPEN PLANNER</span>
+              </div>
+            </div>
+            
+            <div class="p-5 flex flex-col flex-grow">
+              <h3 class="font-poppins font-bold text-base text-primary tracking-tight line-clamp-1 group-hover:text-accent transition-colors duration-200">${item.title}</h3>
+              <p class="font-raleway text-slate-400 text-xs font-medium mt-1 mb-3">by ${item.author}</p>
+              <p class="font-sans text-slate-600 text-xs leading-relaxed line-clamp-3 mb-4 flex-grow">${item.desc}</p>
+              
+              <div class="w-full bg-slate-50 border border-slate-100 text-center text-primary font-raleway font-semibold text-xs py-3 rounded-xl group-hover:bg-accent group-hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-download"></i> View &amp; Access Planner
+              </div>
+            </div>
+          </a>
+        `;
+        grid.innerHTML += plannerCard;
+      });
+    }
+
+    function filterCategory(catName) {
+      currentFilter = catName;
+      
+      document.querySelectorAll('aside button').forEach(btn => btn.classList.remove('active-filter'));
+      
+      const targetButton = document.getElementById(`btn-${catName}`);
+      if (targetButton) {
+        targetButton.classList.add('active-filter');
+      }
+      
+      displayPlanners();
+    }
+
+    // URL Anchored state execution listener integration rules
+    window.onhashchange = window.onload = function() {
+      const hash = window.location.hash.substring(1);
+      if (hash && document.getElementById(`btn-${hash}`)) {
+        filterCategory(hash);
+      } else {
+        filterCategory('all');
+      }
+    };
+  </script>
+</body>
+</html>

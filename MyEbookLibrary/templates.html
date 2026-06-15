@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JA Digital Solutions - Template Library</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Raleway:wght@300;400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1E293B',
+            accent: '#10B981', /* Distinct emerald accent for templates */
+            neutralBg: '#F1F5F9',
+          },
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+            raleway: ['Raleway', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    #mobile-menu {
+      max-height: 0;
+      transition: max-height 0.4s ease-in-out;
+    }
+    #mobile-menu.open {
+      max-height: 300px;
+    }
+    .active-filter {
+      background-color: #10B981 !important;
+      color: #FFFFFF !important;
+    }
+  </style>
+</head>
+<body class="bg-neutralBg text-primary font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Header Navigation -->
+  <header class="sticky top-0 z-50 bg-primary/95 backdrop-blur-md shadow-md transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-poppins font-bold text-white text-xl tracking-wide flex items-center gap-2">
+        <span class="text-accent"><i class="fa-solid fa-cubes"></i></span> JA Digital
+      </a>
+      
+      <div class="hidden md:flex items-center space-x-8 font-raleway font-medium text-sm">
+        <a href="../templates/about.html" class="text-white/90 hover:text-accent transition-colors duration-200">About Us</a>
+        <a href="../templates/shop.html" class="text-white/90 hover:text-accent transition-colors duration-200">Shop Now</a>
+        <a href="../templates/contact.html" class="text-white/90 hover:text-accent transition-colors duration-200">Contact Us</a>
+      </div>
+
+      <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="md:hidden bg-primary overflow-hidden border-t border-white/10">
+      <div class="px-6 py-4 flex flex-col space-y-4 font-raleway font-medium text-base">
+        <a href="../templates/about.html" class="text-white/90 hover:text-accent transition-colors duration-200">About Us</a>
+        <a href="../templates/shop.html" class="text-white/90 hover:text-accent transition-colors duration-200">Shop Now</a>
+        <a href="../templates/contact.html" class="text-white/90 hover:text-accent transition-colors duration-200">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section Header -->
+  <div class="bg-white text-center py-12 px-6 border-b border-slate-200/60" data-aos="fade-up" data-aos-duration="800">
+    <h1 class="font-poppins font-bold text-4xl md:text-5xl text-primary tracking-tight max-w-4xl mx-auto">
+      🛠️ Premium <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Resource Templates</span>
+    </h1>
+    <p class="font-raleway text-slate-600 text-base md:text-xl mt-4 max-w-3xl mx-auto font-medium leading-relaxed">
+      Plug-and-play Canva designs, Notion portals, proposals, and scripts to streamline your business workflows.
+    </p>
+  </div>
+
+  <!-- Main Content Layout Area -->
+  <main class="max-w-7xl mx-auto px-6 py-12 w-full flex-grow flex flex-col lg:flex-row gap-10">
+    
+    <!-- Sidebar Filter Panel Context -->
+    <aside class="w-full lg:w-64 shrink-0 flex flex-col gap-4" data-aos="fade-right">
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60">
+        <h2 class="font-poppins font-bold text-lg text-primary mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-sliders text-accent"></i> Filter Options
+        </h2>
+        
+        <div class="flex flex-col space-y-1 font-raleway text-sm font-medium">
+          <button onclick="filterCategory('all')" id="btn-all" class="w-full text-left px-4 py-2.5 rounded-xl transition-all duration-200 bg-slate-100 hover:bg-slate-200/70 text-slate-700 active-filter">
+            All Templates
+          </button>
+          <button onclick="filterCategory('canva-welcome-packets')" id="btn-canva-welcome-packets" class="w-full text-left px-4 py-2.5 rounded-xl transition-all duration-200 hover:bg-slate-100 text-slate-600 flex items-center justify-between text-xs lg:text-sm">
+            <span>Canva Packets</span>
+            <i class="fa-solid fa-chevron-right text-[10px] opacity-50 ml-2"></i>
+          </button>
+          <button onclick="filterCategory('notion-onboarding-portals')" id="btn-notion-onboarding-portals" class="w-full text-left px-4 py-2.5 rounded-xl transition-all duration-200 hover:bg-slate-100 text-slate-600 flex items-center justify-between text-xs lg:text-sm">
+            <span>Notion Portals</span>
+            <i class="fa-solid fa-chevron-right text-[10px] opacity-50 ml-2"></i>
+          </button>
+          <button onclick="filterCategory('proposal-scripts')" id="btn-proposal-scripts" class="w-full text-left px-4 py-2.5 rounded-xl transition-all duration-200 hover:bg-slate-100 text-slate-600 flex items-center justify-between text-xs lg:text-sm">
+            <span>Proposals &amp; Scripts</span>
+            <i class="fa-solid fa-chevron-right text-[10px] opacity-50 ml-2"></i>
+          </button>
+          <button onclick="filterCategory('graphic-kits')" id="btn-graphic-kits" class="w-full text-left px-4 py-2.5 rounded-xl transition-all duration-200 hover:bg-slate-100 text-slate-600 flex items-center justify-between text-xs lg:text-sm">
+            <span>Graphic Kits</span>
+            <i class="fa-solid fa-chevron-right text-[10px] opacity-50 ml-2"></i>
+          </button>
+          <button onclick="filterCategory('pricing-guides')" id="btn-pricing-guides" class="w-full text-left px-4 py-2.5 rounded-xl transition-all duration-200 hover:bg-slate-100 text-slate-600 flex items-center justify-between text-xs lg:text-sm">
+            <span>Pricing Guides</span>
+            <i class="fa-solid fa-chevron-right text-[10px] opacity-50 ml-2"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Dynamic Card Display Section -->
+    <section class="flex-grow">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full" id="libraryGrid" data-aos="fade-up"></div>
+    </section>
+
+  </main>
+
+  <!-- Global Site Footer Layout -->
+  <footer class="bg-slate-950 text-white/50 text-xs py-6 border-t border-white/5 text-center font-raleway mt-auto">
+    <p>&copy; 2026 JA Digital Solutions. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, mirror: false });
+
+    // Mobile Navigation Drawer Toggle Mechanics
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const isOpen = mobileMenu.classList.contains('open');
+      menuBtn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars-staggered"></i>';
+    });
+
+    // Filtering Core Execution Engine
+    let currentFilter = 'all';
+
+    function displayTemplates() {
+      const grid = document.getElementById('libraryGrid');
+      const items = JSON.parse(localStorage.getItem('myBooks')) || [];
+      grid.innerHTML = "";
+
+      // Filtering matrix processing sequence
+      const filteredTemplates = items.filter(item => {
+        // Condition 1: Confirm the record matches the exact fileGroup scope for templates
+        if (item.fileGroup !== 'templates') return false;
+
+        // Condition 2: Filter specific sub-categories
+        if (currentFilter === 'all') return true;
+        return item.category === currentFilter;
+      });
+
+      // Handle Empty State Display
+      if (filteredTemplates.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-16 bg-white rounded-2xl border border-slate-200/60 p-8">
+            <i class="fa-solid fa-cubes text-slate-300 text-5xl mb-4"></i>
+            <p class="font-raleway text-slate-500 text-lg font-medium">No templates loaded under this filter view yet.</p>
+          </div>`;
+        return;
+      }
+
+      // Generate HTML templates cards interface grid
+      filteredTemplates.forEach(item => {
+        const fileRoute = item.pdfLink ? item.pdfLink : "#";
+        
+        const templateCard = `
+          <a href="${fileRoute}" target="_blank" class="block group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/60 transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+            <div class="relative w-full aspect-[4/5] bg-slate-100 overflow-hidden">
+              <img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]" src="${item.cover}" alt="Cover of ${item.title}">
+              <div class="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span class="bg-primary/90 text-white font-raleway font-semibold px-4 py-2 rounded-xl backdrop-blur-sm shadow-md text-xs tracking-wider">ACCESS TEMPLATE</span>
+              </div>
+            </div>
+            
+            <div class="p-5 flex flex-col flex-grow">
+              <h3 class="font-poppins font-bold text-base text-primary tracking-tight line-clamp-1 group-hover:text-accent transition-colors duration-200">${item.title}</h3>
+              <p class="font-raleway text-slate-400 text-xs font-medium mt-1 mb-3">by ${item.author}</p>
+              <p class="font-sans text-slate-600 text-xs leading-relaxed line-clamp-3 mb-4 flex-grow">${item.desc}</p>
+              
+              <div class="w-full bg-slate-50 border border-slate-100 text-center text-primary font-raleway font-semibold text-xs py-3 rounded-xl group-hover:bg-accent group-hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Use Resource Template
+              </div>
+            </div>
+          </a>
+        `;
+        grid.innerHTML += templateCard;
+      });
+    }
+
+    function filterCategory(catName) {
+      currentFilter = catName;
+      
+      document.querySelectorAll('aside button').forEach(btn => btn.classList.remove('active-filter'));
+      
+      const targetButton = document.getElementById(`btn-${catName}`);
+      if (targetButton) {
+        targetButton.classList.add('active-filter');
+      }
+      
+      displayTemplates();
+    }
+
+    // URL Anchored state execution listener integration rules
+    window.onhashchange = window.onload = function() {
+      const hash = window.location.hash.substring(1);
+      if (hash && document.getElementById(`btn-${hash}`)) {
+        filterCategory(hash);
+      } else {
+        filterCategory('all');
+      }
+    };
+  </script>
+</body>
+</html>

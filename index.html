@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JA Digital Solutions - Home</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Raleway:wght@300;400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1E293B',
+            accent: '#38BDF8',
+            neutralBg: '#F1F5F9',
+          },
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+            raleway: ['Raleway', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Hero Zoom-out Animation */
+    @keyframes zoomOut {
+      0% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    .animate-zoom-out {
+      animation: zoomOut 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Staggered text links animation inside product cards */
+    .product-card:hover .stagger-link {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .product-card .stagger-link {
+      opacity: 0;
+      transform: translateX(-15px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    /* Dynamic Hover Delays for Links */
+    .product-card .stagger-link:nth-child(1) { transition-delay: 100ms; }
+    .product-card .stagger-link:nth-child(2) { transition-delay: 150ms; }
+    .product-card .stagger-link:nth-child(3) { transition-delay: 200ms; }
+    .product-card .stagger-link:nth-child(4) { transition-delay: 250ms; }
+    .product-card .stagger-link:nth-child(5) { transition-delay: 300ms; }
+
+    /* Mobile Menu Max-Height Transitions */
+    #mobile-menu {
+      max-height: 0;
+      transition: max-height 0.4s ease-in-out;
+    }
+    #mobile-menu.open {
+      max-height: 300px;
+    }
+  </style>
+</head>
+<body class="bg-neutralBg text-primary font-sans antialiased min-h-screen flex flex-col">
+
+  <header class="sticky top-0 z-50 bg-primary/95 backdrop-blur-md shadow-md transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-poppins font-bold text-white text-xl tracking-wide flex items-center gap-2">
+        <span class="text-accent"><i class="fa-solid fa-book-open"></i></span> JA Digital
+      </a>
+      
+      <div class="hidden md:flex items-center space-x-8 font-raleway font-medium text-sm">
+        <a href="about.html" class="text-white/90 hover:text-accent transition-colors duration-200">About Us</a>
+        <a href="shop.html" class="text-white/90 hover:text-accent transition-colors duration-200">Shop Now</a>
+        <a href="contact.html" class="text-white/90 hover:text-accent transition-colors duration-200">Contact Us</a>
+      </div>
+
+      <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="md:hidden bg-primary overflow-hidden border-t border-white/10">
+      <div class="px-6 py-4 flex flex-col space-y-4 font-raleway font-medium text-base">
+        <a href="about.html" class="text-white/90 hover:text-accent transition-colors duration-200">About Us</a>
+        <a href="shop.html" class="text-white/90 hover:text-accent transition-colors duration-200">Shop Now</a>
+        <a href="contact.html" class="text-white/90 hover:text-accent transition-colors duration-200">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="relative w-full h-[45vh] md:h-[60vh] overflow-hidden bg-white">
+     <img src="static/banner.png" alt="JA Digital Solutions Banner" class="w-full h-full object-cover animate-zoom-out opacity-100" loading="eager">
+  </div>
+
+  <div class="bg-white text-center py-12 px-6 border-b border-slate-200/60" data-aos="fade-up" data-aos-duration="800">
+    <h1 class="font-poppins font-bold text-4xl md:text-5xl text-primary tracking-tight max-w-4xl mx-auto">
+      The Ultimate Launchpad for Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-emerald-500">Freelance Career</span>
+    </h1>
+    <p class="font-raleway text-slate-600 text-base md:text-xl mt-4 max-w-3xl mx-auto font-medium leading-relaxed">
+      Whether you’re a student looking for a side hustle, a beginner starting from scratch, or an experienced VA ready to scale, JA Digital Solutions is your digital home to learn, build, and succeed.
+    </p>
+  </div>
+
+  <section class="py-20 px-6 max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+    <div class="bg-white/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-sm border border-white/60">
+      <h2 class="font-poppins font-bold text-2xl md:text-3xl text-primary mb-4">Welcome to Your New Digital Home</h2>
+      <p class="text-lg md:text-xl font-light leading-relaxed text-slate-700 font-raleway">
+        Starting an online career can feel overwhelming, lonely, and confusing. You shouldn't have to build your business from scratch. At <strong class="font-medium text-primary">JA Digital Solutions</strong>, we’ve created an ecosystem specifically designed for the modern remote worker. We provide the exact blueprints, templates, and operational toolkits you need to bridge the gap between where you are and where you want to be. Whether your goal is to land your very first client or scale into a full-service agency, you don’t have to figure it out alone. Explore our resources, equip your business, and let’s grow together.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 px-6 max-w-7xl mx-auto w-full">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="font-poppins font-bold text-3xl md:text-4xl text-primary inline-block relative pb-4">
+        Featured Products
+        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-accent rounded-full"></span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-10">
+      
+      <div class="product-card group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg bg-slate-800 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600" alt="E-books" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.08]">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent transition-opacity duration-300"></div>
+        
+        <div class="absolute top-4 right-4 bg-accent/90 text-white p-3 rounded-full shadow-md backdrop-blur-sm transition-transform duration-500 ease-out group-hover:rotate-[360deg]">
+          <i class="fa-solid fa-book-open text-lg"></i>
+        </div>
+
+        <div class="absolute inset-0 p-8 flex flex-col justify-end text-white">
+          <div class="mb-4">
+            <h3 class="font-poppins font-bold text-2xl transition-transform duration-500 ease-out group-hover:-translate-y-2">E-books</h3>
+            <div class="w-10 h-[3px] bg-accent mt-2 rounded transition-all duration-500 ease-out group-hover:w-24"></div>
+          </div>
+          <div class="flex flex-col space-y-2.5 font-raleway font-medium text-sm text-white/80">
+            <a href="../MyEbookLibrary/ebooks.html#client-acquisition" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> Freelance Client Acquisition Guides</a>
+            <a href="../MyEbookLibrary/ebooks.html#va-specialization" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> VA Niche Specialization Playbooks</a>
+            <a href="../MyEbookLibrary/ebooks.html#pricing-negotiation" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> Pricing &amp; Rate Negotiation Strategies</a>
+            <a href="../MyEbookLibrary/ebooks.html#contracts-legal" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> Contracts &amp; Legal Basics for Freelancers</a>
+            <a href="../MyEbookLibrary/ebooks.html#platform-optimization" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> Upwork &amp; Fiverr Optimization Manuals</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg bg-slate-800 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Templates" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.08]">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+        
+        <div class="absolute top-4 right-4 bg-accent/90 text-white p-3 rounded-full shadow-md backdrop-blur-sm transition-transform duration-500 ease-out group-hover:rotate-[360deg]">
+          <i class="fa-solid fa-laptop-code text-lg"></i>
+        </div>
+
+        <div class="absolute inset-0 p-8 flex flex-col justify-end text-white">
+          <div class="mb-4">
+            <h3 class="font-poppins font-bold text-2xl transition-transform duration-500 ease-out group-hover:-translate-y-2">Templates</h3>
+            <div class="w-10 h-[3px] bg-accent mt-2 rounded transition-all duration-500 ease-out group-hover:w-24"></div>
+          </div>
+          <div class="flex flex-col space-y-2.5 font-raleway font-medium text-sm text-white/80">
+            <a href="../MyEbookLibrary/templates.html#canva-welcome-packets" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> Canva Client Welcome Packets</a>
+            <a href="../MyEbookLibrary/templates.html#notion-onboarding-portals" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> Notion Client Onboarding Portals</a>
+            <a href="../MyEbookLibrary/templates.html#proposal-scripts" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> Cold Email &amp; Upwork Proposals</a>
+            <a href="../MyEbookLibrary/templates.html#graphic-kits" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> Social Media Carousel &amp; Graphic Kits</a>
+            <a href="../MyEbookLibrary/templates.html#pricing-guides" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> Service Menus &amp; Pricing Guides</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg bg-slate-800 cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=600" alt="Planners" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.08]">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+        
+        <div class="absolute top-4 right-4 bg-accent/90 text-white p-3 rounded-full shadow-md backdrop-blur-sm transition-transform duration-500 ease-out group-hover:rotate-[360deg]">
+          <i class="fa-solid fa-calendar-check text-lg"></i>
+        </div>
+
+        <div class="absolute inset-0 p-8 flex flex-col justify-end text-white">
+          <div class="mb-4">
+            <h3 class="font-poppins font-bold text-2xl transition-transform duration-500 ease-out group-hover:-translate-y-2">Planners</h3>
+            <div class="w-10 h-[3px] bg-accent mt-2 rounded transition-all duration-500 ease-out group-hover:w-24"></div>
+          </div>
+          <div class="flex flex-col space-y-2.5 font-raleway font-medium text-sm text-white/80">
+            <a href="../MyEbookLibrary/planners.html#multi-client" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> Multi-Client Digital Daily Planners</a>
+            <a href="../MyEbookLibrary/planners.html#goal-milestone" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> Freelance Goal &amp; Milestone Trackers</a>
+            <a href="../MyEbookLibrary/planners.html#time-blocking" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> Time-Blocking &amp; Productivity Sheets</a>
+            <a href="../MyEbookLibrary/planners.html#content-calendar" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> Social Media Content Calendar Layouts</a>
+            <a href="../MyEbookLibrary/planners.html#project-milestone" class="stagger-link hover:text-accent flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-accent"></i> Project Milestone &amp; Deadline Maps</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bg-primary text-white py-24 px-6 mt-auto">
+    <div class="max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+      <h2 class="font-poppins font-bold text-3xl md:text-4xl mb-4 tracking-tight">Explore More</h2>
+      <p class="font-raleway text-white/70 max-w-xl mx-auto mb-10 text-base md:text-lg font-light">
+        Discover free resources, inspiring insights, and blueprints designed to elevate your journey.
+      </p>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto font-raleway font-semibold text-sm tracking-wide">
+        <a href="resources.html" class="bg-accent text-white py-3.5 px-6 rounded-xl hover:bg-sky-500 shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-2">
+          <i class="fa-solid fa-gift opacity-80"></i> Free Resources
+        </a>
+        <a href="blog.html" class="bg-accent text-white py-3.5 px-6 rounded-xl hover:bg-sky-500 shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-2">
+          <i class="fa-solid fa-newspaper opacity-80"></i> Blog &amp; Insights
+        </a>
+        <a href="starter-kits.html" class="bg-accent text-white py-3.5 px-6 rounded-xl hover:bg-sky-500 shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-2">
+          <i class="fa-solid fa-rocket opacity-80"></i> Starter Kits
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-950 text-white/50 text-xs py-6 border-t border-white/5 text-center font-raleway">
+    <p>&copy; 2026 JA Digital Solutions. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize Scroll Animations
+    AOS.init({
+      once: true,
+      mirror: false
+    });
+
+    // Mobile Hamburger Menu Toggle Trigger
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const isOpen = mobileMenu.classList.contains('open');
+      menuBtn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars-staggered"></i>';
+    });
+  </script>
+</body>
+</html>

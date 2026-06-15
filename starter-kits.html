@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JA Digital Solutions - Freelancer & VA Starter Kits</title>
+  <meta name="description" content="Step-by-step client onboarding frameworks, 30-day freelance launch blueprints, and faith-driven stewardship engines designed to build a thriving independent service business.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366f1',
+            primaryHover: '#4f46e5',
+            accent: '#38bdf8',
+            bgMain: '#0b0f19',
+            bgCard: '#131c2e',
+            bgCardHover: '#19253f',
+            textMain: '#f8fafc',
+            textMuted: '#94a3b8',
+            textLight: '#64748b'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            jakarta: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Mobile Menu Drawer Animation Mechanics */
+    #mobile-menu {
+      max-height: 0;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #mobile-menu.open {
+      max-height: 300px;
+    }
+  </style>
+</head>
+<body class="bg-bgMain text-textMain font-sans antialiased min-h-screen flex flex-col bg-[radial-gradient(circle_at_10%_20%,rgba(99,102,241,0.04)_0%,transparent_40%),radial-gradient(circle_at_90%_80%,rgba(56,189,248,0.04)_0%,transparent_40%)]">
+
+  <header class="sticky top-0 z-50 bg-bgMain/90 backdrop-blur-md border-b border-white/[0.06] shadow-sm">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-jakarta font-bold text-textMain text-lg tracking-tight flex items-center gap-2">
+        <span class="text-accent"><i class="fa-solid fa-cubes"></i></span> JA Digital
+      </a>
+      
+      <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="index.html" class="text-textMuted hover:text-textMain transition-colors duration-200">Home</a>
+        <a href="shop.html" class="text-textMuted hover:text-textMain transition-colors duration-200">Shop Now</a>
+        <a href="about.html" class="text-textMuted hover:text-textMain transition-colors duration-200">About Us</a>
+      </div>
+
+      <button id="menu-btn" class="md:hidden text-textMain focus:outline-none text-xl" aria-label="Toggle Navigation Layout">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="md:hidden bg-bgCard overflow-hidden border-b border-white/[0.06]">
+      <div class="px-6 py-4 flex flex-col space-y-3 font-medium text-sm">
+        <a href="index.html" class="text-textMuted hover:text-textMain transition-colors duration-200">Home</a>
+        <a href="shop.html" class="text-textMuted hover:text-textMain transition-colors duration-200">Shop Now</a>
+        <a href="about.html" class="text-textMuted hover:text-textMain transition-colors duration-200">About Us</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto w-full px-6 py-16 flex-grow space-y-20">
+    
+    <!-- Section Header Block -->
+    <header class="space-y-3 max-w-2xl" data-aos="fade-right" data-aos-duration="800">
+      <h1 class="font-jakarta font-extrabold text-3xl md:text-4xl tracking-tight bg-gradient-to-r from-textMain via-primary to-accent bg-clip-text text-transparent">
+        Freelancer System Starter Kits
+      </h1>
+      <p class="text-textMuted text-sm md:text-base font-normal leading-relaxed">
+        Engineered operations frameworks, strategic milestones, and faith-centered structures designed to transition solo VAs and freelancers into highly professional, organized premium service providers.
+      </p>
+    </header>
+
+    <div class="space-y-24">
+
+      <!-- KIT 1: FREELANCE SYSTEM NAVIGATION BLUEPRINT -->
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start" data-aos="fade-up" data-aos-duration="800">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-xl shadow-inner"><i class="fa-solid fa-user-gear"></i></div>
+          <h2 class="font-jakarta font-bold text-xl md:text-2xl text-textMain tracking-tight">Kit 01: Client &amp; Asset Management Blueprint</h2>
+          <p class="text-textMuted text-sm leading-relaxed">Learn how to streamline, separate, and maximize the digital utility layers engineered into your daily freelance workflows and client management systems.</p>
+        </div>
+        
+        <div class="lg:col-span-2 space-y-4">
+          <div class="bg-bgCard border border-white/[0.06] rounded-2xl p-6 space-y-6">
+            <!-- Step 1 -->
+            <div class="flex gap-4 items-start">
+              <div class="w-6 h-6 rounded-md bg-white/[0.04] text-accent font-bold text-xs flex items-center justify-center shrink-0 border border-white/[0.06]">1</div>
+              <div>
+                <h4 class="font-jakarta font-semibold text-sm text-textMain mb-1">Define Your Digital Service Offer</h4>
+                <p class="text-textMuted text-xs md:text-sm leading-relaxed">Filter and align your specialized skills: use our targeted eBooks to hone your niche, deploy predefined proposal layouts to secure premium client retainers, and use trackers to manage day-to-day work tasks.</p>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="flex gap-4 items-start">
+              <div class="w-6 h-6 rounded-md bg-white/[0.04] text-accent font-bold text-xs flex items-center justify-center shrink-0 border border-white/[0.06]">2</div>
+              <div>
+                <h4 class="font-jakarta font-semibold text-sm text-textMain mb-1">Deploy the Client Dashboard Engine</h4>
+                <p class="text-textMuted text-xs md:text-sm leading-relaxed">Our premade virtual workspace setups plug right into standard collaborative cloud ecosystems (Notion, Google Drive, Loom). Establish crystal-clear transparency with your clients from day one.</p>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="flex gap-4 items-start">
+              <div class="w-6 h-6 rounded-md bg-white/[0.04] text-accent font-bold text-xs flex items-center justify-center shrink-0 border border-white/[0.06]">3</div>
+              <div>
+                <h4 class="font-jakarta font-semibold text-sm text-textMain mb-1">Scale through Structural Organization</h4>
+                <p class="text-textMuted text-xs md:text-sm leading-relaxed">Synchronize your active client deliverables alongside our business resource updates to regularly clean out project bottlenecks and avoid toxic burnout loops.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KIT 2: THE 30-DAY FREELANCE LAUNCH MATRIX -->
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start" data-aos="fade-up" data-aos-duration="800">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-xl shadow-inner"><i class="fa-solid fa-business-time"></i></div>
+          <h2 class="font-jakarta font-bold text-xl md:text-2xl text-textMain tracking-tight">Kit 02: The 30-Day VA Launch Matrix</h2>
+          <p class="text-textMuted text-sm leading-relaxed">A chronological, step-by-step roadmap constructed to take your service business from ground zero to securing live international client projects over four targeted milestones.</p>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Phase 1 -->
+            <div class="bg-bgCard border border-white/[0.06] rounded-xl p-5 space-y-2">
+              <span class="text-[10px] font-bold tracking-wider text-primary uppercase">Days 01 - 07</span>
+              <h4 class="font-jakarta font-semibold text-sm text-textMain">Niche Optimization &amp; Tool Setup</h4>
+              <p class="text-textMuted text-xs leading-relaxed">Identify your specific target industry gaps. Set up clean professional workspace tracking software to map and measure your raw daily production capabilities.</p>
+            </div>
+            <!-- Phase 2 -->
+            <div class="bg-bgCard border border-white/[0.06] rounded-xl p-5 space-y-2">
+              <span class="text-[10px] font-bold tracking-wider text-accent uppercase">Days 08 - 15</span>
+              <h4 class="font-jakarta font-semibold text-sm text-textMain">Portfolio &amp; Brand Architecture</h4>
+              <p class="text-textMuted text-xs leading-relaxed">Build a solid, visually clear digital presence. Deploy highly optimized resume formats, link matrices, and sample case-study frameworks without design clutter.</p>
+            </div>
+            <!-- Phase 3 -->
+            <div class="bg-bgCard border border-white/[0.06] rounded-xl p-5 space-y-2">
+              <span class="text-[10px] font-bold tracking-wider text-indigo-400 uppercase">Days 16 - 23</span>
+              <h4 class="font-jakarta font-semibold text-sm text-textMain">Outreach &amp; Proposal Mechanics</h4>
+              <p class="text-textMuted text-xs leading-relaxed">Initiate warm networking and job applications. Deploy pre-vetted proposal structures, discover value-first pitch methodologies, and track pipeline metrics.</p>
+            </div>
+            <!-- Phase 4 -->
+            <div class="bg-bgCard border border-white/[0.06] rounded-xl p-5 space-y-2">
+              <span class="text-[10px] font-bold tracking-wider text-emerald-400 uppercase">Days 24 - 30</span>
+              <h4 class="font-jakarta font-semibold text-sm text-textMain">Onboarding &amp; Contract Security</h4>
+              <p class="text-textMuted text-xs leading-relaxed">Onboard your new premium clients. Handle service contract frameworks smoothly and protect your digital billing schedules using clear project sign-off procedures.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KIT 3: FAITH-DRIVEN FREELANCER MINDSET ENGINE -->
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start" data-aos="fade-up" data-aos-duration="800">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl shadow-inner"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h2 class="font-jakarta font-bold text-xl md:text-2xl text-textMain tracking-tight">Kit 03: Faith-Driven Freelancer Core</h2>
+          <p class="text-textMuted text-sm leading-relaxed">Aligning technical virtual workspace metrics with deep, unconditional Christian stewardship parameters to unlock absolute confidence in your independent career path.</p>
+        </div>
+
+        <div class="lg:col-span-2 space-y-4">
+          <div class="bg-gradient-to-br from-bgCard to-bgMain border border-white/[0.06] rounded-2xl p-6 space-y-6">
+            <!-- Concept 1 -->
+            <div class="space-y-1.5">
+              <h4 class="font-jakarta font-semibold text-sm text-amber-200/90 flex items-center gap-2">
+                <i class="fa-solid fa-arrow-up-right-dots text-xs"></i> Shift from Desperation to Stewardship
+              </h4>
+              <p class="text-textMuted text-xs md:text-sm leading-relaxed">
+                Acknowledge that your analytical time, raw talents, and internet business opportunities are currencies on loan from God. This profound perspective eliminates client rejection fears, grounding your career in ultimate purpose.
+              </p>
+            </div>
+            <!-- Concept 2 -->
+            <div class="space-y-1.5">
+              <h4 class="font-jakarta font-semibold text-sm text-amber-200/90 flex items-center gap-2">
+                <i class="fa-solid fa-bezier-curve text-xs"></i> Absolute Excellence as Form of Ministry
+              </h4>
+              <p class="text-textMuted text-xs md:text-sm leading-relaxed">
+                Disorganized, messy files and missed client timelines steal your peace. By constructing orderly user folders, building neat dashboards, and maintaining reliable systems, you reflect Christ-like integrity to global markets.
+              </p>
+            </div>
+            <!-- Concept 3 -->
+            <div class="space-y-1.5">
+              <h4 class="font-jakarta font-semibold text-sm text-amber-200/90 flex items-center gap-2">
+                <i class="fa-solid fa-anchor text-xs"></i> Identity Anchored Outside the Freelance Hustle
+              </h4>
+              <p class="text-textMuted text-xs md:text-sm leading-relaxed">
+                Anchor your self-worth safely in your divine calling and values—staying completely calm, peaceful, and resilient even through unstable platform algorithms, seasonal drought drops, or difficult client changes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="bg-bgCard border-t border-white/[0.06] text-xs font-sans text-textMuted mt-auto">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+        <p class="text-textLight font-medium">&copy; 2026 JA Digital Solutions. All rights reserved.</p>
+        <span class="hidden md:inline text-white/[0.06]">|</span>
+        <p class="text-textLight">Cebu City, Philippines</p>
+      </div>
+
+      <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-medium tracking-wide text-textMuted" aria-label="Footer system layout utilities">
+        <a href="shop.html" class="hover:text-accent transition-colors duration-200 flex items-center gap-1.5"><i class="fa-solid fa-bag-shopping text-[10px]"></i> Shop</a>
+        <a href="resources.html" class="hover:text-accent transition-colors duration-200 flex items-center gap-1.5"><i class="fa-solid fa-layer-group text-[10px]"></i> Resources</a>
+        <a href="contact.html" class="hover:text-accent transition-colors duration-200 flex items-center gap-1.5"><i class="fa-solid fa-envelope text-[10px]"></i> Contact</a>
+      </nav>
+
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize Scroll Animations Layer
+    AOS.init({
+      once: true,
+      mirror: false
+    });
+
+    // Mobile Hamburger Dropdown Action
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const isOpen = mobileMenu.classList.contains('open');
+      menuBtn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars-staggered"></i>';
+    });
+  </script>
+</body>
+</html>
