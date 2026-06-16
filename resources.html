@@ -3,307 +3,77 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JA Digital Solutions — Free Freelancer Resources</title>
-  <meta name="description" content="Free scaling templates, client acquisition guides, cold outreach scripts, and community assets for Virtual Assistants and Freelancers from JA Digital Solutions." />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Tailwind CSS CDN -->
+  <title>JA Digital Solutions — Freelance Launch Toolkit</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Font Awesome for Modern Unified Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Animate On Scroll (AOS) CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#6366f1',
-            primaryHover: '#4f46e5',
-            accent: '#38bdf8',
-            bgMain: '#0b0f19',
-            bgCard: '#131c2e',
-            bgCardHover: '#19253f',
-            textMain: '#f8fafc',
-            textMuted: '#94a3b8',
-            textLight: '#64748b'
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            jakarta: ['Plus Jakarta Sans', 'sans-serif']
-          }
-        }
-      }
+      theme: { extend: { colors: { primary: '#6366f1', accent: '#38bdf8', bgMain: '#0b0f19', bgCard: '#131c2e' } } }
     }
   </script>
-
-  <style>
-    #mobile-menu {
-      max-height: 0;
-      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    #mobile-menu.open {
-      max-height: 300px;
-    }
-  </style>
 </head>
-<body class="bg-bgMain text-textMain font-sans antialiased min-h-screen flex flex-col px-4 py-8 md:py-12 bg-[radial-gradient(circle_at_10%_20%,rgba(99,102,241,0.04)_0%,transparent_40%),radial-gradient(circle_at_90%_80%,rgba(56,189,248,0.04)_0%,transparent_40%)]">
+<body class="bg-bgMain text-white font-sans antialiased">
 
-  <div class="max-w-6xl mx-auto w-full flex-grow flex flex-col">
+  <!-- Hero Section -->
+  <section class="max-w-4xl mx-auto px-6 py-20 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">Your Free Freelance Launch Toolkit</h1>
+    <p class="text-lg text-slate-400">Skip the trial and error. Download the exact templates, trackers, and cheat sheets we use to run a streamlined, profitable remote business.</p>
+  </section>
+
+  <!-- Resource Grid -->
+  <main class="max-w-6xl mx-auto px-6 pb-20 grid grid-cols-1 md:grid-cols-2 gap-8">
     
-    <!-- Sticky Glassmorphic Header Component -->
-    <header class="w-full flex flex-col md:flex-row items-center justify-between gap-4 pb-6 mb-8 border-b border-white/[0.06]" data-aos="fade-down" data-aos-duration="600">
-      <div class="flex items-center gap-4">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-jakarta font-bold text-lg shadow-[0_8px_20px_rgba(99,102,241,0.3)]">
-          JA
-        </div>
-        <div>
-          <h2 class="font-jakarta font-bold text-xl text-textMain tracking-tight leading-tight">JA Digital Solutions</h2>
-          <p class="text-textMuted text-xs font-normal">Level up your freelance business — templates & blueprints for VAs</p>
-        </div>
-      </div>
-      
-      <!-- Mobile Menu Navigation Action -->
-      <nav aria-label="Main navigation" class="flex items-center gap-4">
-        <a class="font-semibold text-textMuted hover:text-textMain text-xs px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.06] hover:border-accent transition-all duration-300" href="#resources">
-          Resources Dashboard
-        </a>
-      </nav>
-    </header>
+    <!-- Resource 1 -->
+    <div class="bg-bgCard p-6 rounded-2xl border border-white/10 hover:border-accent/50 transition-all">
+      <div class="h-40 bg-white/5 rounded-xl mb-6 flex items-center justify-center text-slate-600">Mockup: Script PDF</div>
+      <h3 class="text-xl font-bold mb-2">The Freelance Discovery Call Script</h3>
+      <p class="text-sm text-slate-400 mb-6">Stop freezing when a client asks, "So, tell me about your services." Get the exact word-for-word script to lead calls with confidence.</p>
+      <button onclick="toggleModal()" class="w-full bg-primary hover:bg-indigo-600 py-3 rounded-xl font-semibold">Get the Script</button>
+    </div>
 
-    <!-- Split Hero Layout (Intro Mission Statement & Featured Callouts) -->
-    <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6" id="intro">
-      
-      <!-- Left Anchor Mission Column -->
-      <div class="lg:col-span-8 bg-bgCard p-8 md:p-10 rounded-2xl border border-white/[0.06] flex flex-col justify-center relative overflow-hidden shadow-md" data-aos="fade-right" data-aos-duration="800">
-        <div class="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-primary to-accent"></div>
-        <h1 class="font-jakarta font-bold text-2xl md:text-3xl text-textMain tracking-tight leading-snug mb-4">
-          Stop trading hours for pennies. Access premium toolkits built to scale your freelance career.
-        </h1>
-        <p class="text-textMuted text-sm md:text-base leading-relaxed font-normal">
-          JA Digital Solutions provides modern Virtual Assistants and independent freelancers with plug-and-play client onboarding frameworks, high-converting cold outreach sequences, and operational checklists designed to land high-ticket retainers.
-        </p>
-      </div>
+    <!-- Resource 2 -->
+    <div class="bg-bgCard p-6 rounded-2xl border border-white/10 hover:border-accent/50 transition-all">
+      <div class="h-40 bg-white/5 rounded-xl mb-6 flex items-center justify-center text-slate-600">Mockup: Notion Template</div>
+      <h3 class="text-xl font-bold mb-2">The New Client Setup Checklist</h3>
+      <p class="text-sm text-slate-400 mb-6">Impress your very first client. Use this step-by-step checklist to ensure you collect passwords and sign contracts without a hitch.</p>
+      <button onclick="toggleModal()" class="w-full bg-primary hover:bg-indigo-600 py-3 rounded-xl font-semibold">Access the Checklist</button>
+    </div>
 
-      <!-- Right Hand Aside Section for Curated Dynamic Elements -->
-      <aside class="lg:col-span-4 bg-bgCard p-6 md:p-8 rounded-2xl border border-white/[0.06] flex flex-col justify-between shadow-md" aria-label="Featured products" data-aos="fade-left" data-aos-duration="800">
-        <div class="space-y-4">
-          <h3 class="font-jakarta font-bold text-xs uppercase tracking-widest text-accent">Hot Downloads This Week</h3>
-          <div class="flex flex-col gap-3">
-            
-            <!-- Item Minimal Row 1 -->
-            <div class="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4 flex items-center gap-4 transition-all duration-300 hover:border-accent/30 hover:bg-bgCardHover hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)]">
-              <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold text-xs shrink-0 font-jakarta">OS</div>
-              <div>
-                <h4 class="font-jakarta font-semibold text-sm text-textMain">Outreach Script Vault</h4>
-                <p class="text-textMuted text-xs mt-0.5">5 proven templates for LinkedIn & Upwork</p>
-              </div>
-            </div>
+    <!-- Resource 3 -->
+    <div class="bg-bgCard p-6 rounded-2xl border border-white/10 hover:border-accent/50 transition-all">
+      <div class="h-40 bg-white/5 rounded-xl mb-6 flex items-center justify-center text-slate-600">Mockup: PDF Guide</div>
+      <h3 class="text-xl font-bold mb-2">The Ultimate Beginner VA Tech Stack</h3>
+      <p class="text-sm text-slate-400 mb-6">You don't need expensive software. A curated list of the best free digital tools to manage tasks, create graphics, and schedule meetings.</p>
+      <button onclick="toggleModal()" class="w-full bg-primary hover:bg-indigo-600 py-3 rounded-xl font-semibold">Get the Guide</button>
+    </div>
 
-            <!-- Item Minimal Row 2 -->
-            <div class="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4 flex items-center gap-4 transition-all duration-300 hover:border-accent/30 hover:bg-bgCardHover hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)]">
-              <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-bold text-xs shrink-0 font-jakarta">PP</div>
-              <div>
-                <h4 class="font-jakarta font-semibold text-sm text-textMain">Premium Proposal Kit</h4>
-                <p class="text-textMuted text-xs mt-0.5">High-ticket pitch presentation skeleton</p>
-              </div>
-            </div>
+    <!-- Resource 4 -->
+    <div class="bg-bgCard p-6 rounded-2xl border border-white/10 hover:border-accent/50 transition-all">
+      <div class="h-40 bg-white/5 rounded-xl mb-6 flex items-center justify-center text-slate-600">Mockup: Spreadsheet</div>
+      <h3 class="text-xl font-bold mb-2">Daily Productivity & KPI Tracker</h3>
+      <p class="text-sm text-slate-400 mb-6">Take control of your day. Track your client hours, admin tasks, and business metrics in one simple, organized dashboard.</p>
+      <button onclick="toggleModal()" class="w-full bg-primary hover:bg-indigo-600 py-3 rounded-xl font-semibold">Claim My Free Tracker</button>
+    </div>
 
-          </div>
-        </div>
-        <span class="text-textLight text-xs text-center block mt-4 font-medium">Engineered to turn discovery calls into signed retainers.</span>
-      </aside>
-    </section>
+  </main>
 
-    <!-- Structural Core Grid Modules -->
-    <main class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="resources">
-
-      <!-- Column Module: Left Stack -->
-      <div class="flex flex-col gap-6" data-aos="fade-up" data-aos-duration="800">
-
-        <!-- Block 1: Free Learning Elements Container -->
-        <section class="bg-bgCard p-6 md:p-8 rounded-2xl border border-white/[0.06] shadow-md">
-          <h2 class="font-jakarta font-bold text-xl text-textMain mb-6 flex items-center gap-3">
-            <span class="text-primary text-base"><i class="fa-solid fa-graduation-cap"></i></span> 1. Freelance Strategy Resources
-          </h2>
-          <div class="flex flex-col gap-6">
-            
-            <!-- Row Segment Component -->
-            <div class="flex items-start gap-4 pb-5 border-b border-white/[0.04] last:pb-0 last:border-b-0">
-              <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 text-sm">
-                <i class="fa-solid fa-book-open"></i>
-              </div>
-              <div>
-                <h4 class="font-jakarta font-semibold text-base text-textMain mb-1">High-Ticket VA Blueprint Bundle</h4>
-                <p class="text-textMuted text-sm leading-relaxed">Instant download of our foundational guides: Client Acquisition Roadmap, Lead Sourcing Hacks, and the Tech-Stack Bible.</p>
-              </div>
-            </div>
-
-            <!-- Row Segment Component -->
-            <div class="flex items-start gap-4 pb-5 border-b border-white/[0.04] last:pb-0 last:border-b-0">
-              <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 text-sm">
-                <i class="fa-solid fa-compass"></i>
-              </div>
-              <div>
-                <h4 class="font-jakarta font-semibold text-base text-textMain mb-1">Cold Email & DM Strategy Guide</h4>
-                <p class="text-textMuted text-sm leading-relaxed">Breakthrough strategies on locating decision-makers, bypassing gatekeepers, and setting up multi-channel touchpoints.</p>
-              </div>
-            </div>
-
-            <!-- Row Segment Component -->
-            <div class="flex items-start gap-4 pb-5 border-b border-white/[0.04] last:pb-0 last:border-b-0">
-              <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 text-sm">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-              </div>
-              <div>
-                <h4 class="font-jakarta font-semibold text-base text-textMain mb-1">The Ultimate Automation Stack</h4>
-                <p class="text-textMuted text-sm leading-relaxed">A curated master list of free and freemium AI tools, automatic scheduling sequences, and project trackers to handle 3x more clients.</p>
-              </div>
-            </div>
-            
-          </div>
-        </section>
-
-        <!-- Block 3: Mindset & Retention Content Card -->
-        <section class="bg-bgCard p-6 md:p-8 rounded-2xl border border-white/[0.06] shadow-md">
-          <h2 class="font-jakarta font-bold text-xl text-textMain mb-6 flex items-center gap-3">
-            <span class="text-emerald-400 text-base"><i class="fa-solid fa-handshake"></i></span> 3. Client Retention & Mindset
-          </h2>
-          <div class="flex flex-col gap-4">
-            
-            <!-- Golden Rule Structural Accent Box -->
-            <div class="bg-gradient-to-br from-emerald-500/[0.06] to-accent/[0.06] p-5 rounded-xl border-l-4 border-emerald-500">
-              <strong class="block text-[11px] uppercase tracking-widest text-emerald-400 font-bold mb-1">The Golden Retainer Law</strong>
-              <div class="font-jakarta font-medium italic text-base text-textMain">"Don't sell tasks; sell outcomes. Clients don't want an inbox manager—they want 10 hours of their sanity back."</div>
-            </div>
-
-            <!-- Devotional Simple Grid Element -->
-            <div class="bg-white/[0.01] border border-white/[0.04] p-5 rounded-xl">
-              <h4 class="font-jakarta font-semibold text-base text-textMain mb-1">Guide: Handling Scope Creep Professionally</h4>
-              <p class="text-textMuted text-sm leading-relaxed">Learn exact conversational turnphrases to gracefully shut down extra unpaid assignments and upsell them into larger contracts.</p>
-            </div>
-          </div>
-        </section>
-
-      </div>
-
-      <!-- Column Module: Right Stack -->
-      <div class="flex flex-col gap-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-
-        <!-- Block 2: Interactive Structural Templates -->
-        <section class="bg-bgCard p-6 md:p-8 rounded-2xl border border-white/[0.06] shadow-md">
-          <h2 class="font-jakarta font-bold text-xl text-textMain mb-6 flex items-center gap-3">
-            <span class="text-accent text-base"><i class="fa-solid fa-cubes"></i></span> 2. Agency-Grade Templates
-          </h2>
-          <div class="flex flex-col gap-3.5">
-            
-            <!-- Template Blueprint 1 -->
-            <div class="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-bgCardHover hover:border-accent/30 hover:-translate-y-0.5">
-              <div class="flex justify-between items-center mb-1.5">
-                <strong class="font-jakarta font-semibold text-[15px] text-textMain">Notion Client Workspace Hub</strong>
-                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider bg-emerald-500/10 text-emerald-400">Free</span>
-              </div>
-              <p class="text-textMuted text-sm leading-relaxed">A clean template designed to showcase transparent communication pipelines, visual asset delivery, and milestone tracking.</p>
-            </div>
-
-            <!-- Template Blueprint 2 -->
-            <div class="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-bgCardHover hover:border-accent/30 hover:-translate-y-0.5">
-              <div class="flex justify-between items-center mb-1.5">
-                <strong class="font-jakarta font-semibold text-[15px] text-textMain">VA Service Agreement & Contract</strong>
-                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider bg-emerald-500/10 text-emerald-400">Free</span>
-              </div>
-              <p class="text-textMuted text-sm leading-relaxed">A simple, bulletproof independent contractor legal outline securing late payment parameters and project definitions.</p>
-            </div>
-
-            <!-- Template Blueprint 3 -->
-            <div class="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-bgCardHover hover:border-accent/30 hover:-translate-y-0.5">
-              <div class="flex justify-between items-center mb-1.5">
-                <strong class="font-jakarta font-semibold text-[15px] text-textMain">Hourly Rate Optimization Sheet</strong>
-                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider bg-emerald-500/10 text-emerald-400">Free</span>
-              </div>
-              <p class="text-textMuted text-sm leading-relaxed">An interactive layout built to identify structural leakage, calculate true expenses, and engineer profit margins.</p>
-            </div>
-
-            <!-- Template Blueprint 4 -->
-            <div class="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-bgCardHover hover:border-accent/30 hover:-translate-y-0.5">
-              <div class="flex justify-between items-center mb-1.5">
-                <strong class="font-jakarta font-semibold text-[15px] text-textMain">Complete Business Engine Vault</strong>
-                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider bg-accent/10 text-accent">All</span>
-              </div>
-              <p class="text-textMuted text-sm leading-relaxed">Unlock access to entire scaling pipelines, agency portfolio builders, and cold discovery slide decks.</p>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Block 4: Community & Support Action Form -->
-        <section class="bg-bgCard p-6 md:p-8 rounded-2xl border border-white/[0.06] shadow-md" id="community">
-          <h2 class="font-jakarta font-bold text-xl text-textMain mb-4 flex items-center gap-3">
-            <span class="text-primary text-base"><i class="fa-solid fa-users"></i></span> 4. The Freelance Coalition
-          </h2>
-          <p class="text-textMuted text-sm mb-4 leading-relaxed">Join 12,000+ high-performing freelancers receiving vetted remote jobs and strategy breakdowns weekly.</p>
-          
-          <!-- Subscription Minimal Component Box -->
-          <div class="flex flex-col sm:flex-row gap-2.5 mb-5">
-            <input type="email" placeholder="Enter your business email" aria-label="Email address signup input"
-              class="flex-1 px-4 py-3 rounded-xl border border-white/[0.06] bg-black/20 text-textMain text-sm outline-none transition-all duration-300 focus:border-accent focus:ring-4 focus:ring-accent/10">
-            <button class="bg-primary text-white font-semibold text-sm px-5 py-3 rounded-xl hover:bg-primaryHover hover:shadow-[0_4px_12px_rgba(99,102,241,0.3)] transition-all duration-300 tracking-wide">
-              Join Circle
-            </button>
-          </div>
-
-          <!-- Social Channels Icon Grid Layer -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-5 pb-5 border-b border-white/[0.06]">
-            <a href="https://linkedin.com/" target="_blank" class="text-xs font-semibold bg-white/[0.03] border border-white/[0.06] py-2.5 rounded-xl text-textMuted text-center hover:bg-accent/10 hover:text-accent hover:border-accent transition-all duration-300 flex items-center justify-center gap-2">
-              <i class="fa-brands fa-linkedin-in text-xs"></i> LinkedIn
-            </a>
-            <a href="https://facebook.com/" target="_blank" class="text-xs font-semibold bg-white/[0.03] border border-white/[0.06] py-2.5 rounded-xl text-textMuted text-center hover:bg-accent/10 hover:text-accent hover:border-accent transition-all duration-300 flex items-center justify-center gap-2">
-              <i class="fa-brands fa-facebook-f text-xs"></i> Community
-            </a>
-            <a href="https://twitter.com/" target="_blank" class="text-xs font-semibold bg-white/[0.03] border border-white/[0.06] py-2.5 rounded-xl text-textMuted text-center hover:bg-accent/10 hover:text-accent hover:border-accent transition-all duration-300 flex items-center justify-center gap-2">
-              <i class="fa-brands fa-x-twitter text-xs"></i> Twitter / X
-            </a>
-            <a href="https://youtube.com/" target="_blank" class="text-xs font-semibold bg-white/[0.03] border border-white/[0.06] py-2.5 rounded-xl text-textMuted text-center hover:bg-accent/10 hover:text-accent hover:border-accent transition-all duration-300 flex items-center justify-center gap-2">
-              <i class="fa-brands fa-youtube text-xs"></i> Masterclasses
-            </a>
-          </div>
-
-          <!-- Customer Service Minimal Block -->
-          <div class="space-y-1">
-            <strong class="font-jakarta font-semibold text-sm text-textMain block">Freelancer Success Network</strong>
-            <p class="text-textMuted text-xs leading-relaxed">Stuck on an offer structure or proposal build? Reach out to our strategy experts.</p>
-          </div>
-        </section>
-
-      </div>
-    </main>
-
-    <!-- Complete Unified System Footer Element -->
-    <footer class="mt-12 pt-6 border-t border-white/[0.06] flex flex-col-reverse sm:flex-row items-center justify-between gap-4 font-sans text-xs">
-      <div class="text-textLight">&copy; 2026 JA Digital Solutions. All rights reserved.</div>
-      <nav class="flex gap-6 text-textMuted" aria-label="Footer system utilities">
-        <a href="privacy.html" class="hover:text-accent transition-colors duration-200">Privacy Policy</a>
-        <a href="terms.html" class="hover:text-accent transition-colors duration-200">Terms of Service</a>
-        <a href="index.html" class="hover:text-accent transition-colors duration-200">Home</a>
-      </nav>
-    </footer>
-
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 hidden z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div class="bg-bgCard p-8 rounded-2xl w-full max-w-md border border-white/10">
+      <h2 class="text-2xl font-bold mb-4">Get Instant Access</h2>
+      <form action="thank-you.html" class="space-y-4">
+        <input type="text" placeholder="First Name" class="w-full bg-black/20 p-3 rounded-xl border border-white/10 outline-none focus:border-accent">
+        <input type="email" placeholder="Business Email" class="w-full bg-black/20 p-3 rounded-xl border border-white/10 outline-none focus:border-accent">
+        <button class="w-full bg-accent text-black font-bold py-3 rounded-xl">Download Now</button>
+        <button type="button" onclick="toggleModal()" class="w-full text-slate-400 text-sm">Cancel</button>
+      </form>
+    </div>
   </div>
 
-  <!-- Scripts for Smooth Dynamic Animations -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      once: true,
-      mirror: false
-    });
+    function toggleModal() {
+      document.getElementById('modal').classList.toggle('hidden');
+    }
   </script>
 </body>
 </html>
