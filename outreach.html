@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JA Digital Solutions - Outreach & Cold Pitching Vault</title>
+  <meta name="description" content="Strategic guides for master-level outreach: from high-converting cold emails and social selling to persistent follow-up and effective prospect research.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366f1',
+            primaryHover: '#4f46e5',
+            accent: '#38bdf8',
+            bgMain: '#0b0f19',
+            bgCard: '#131c2e',
+            bgCardHover: '#19253f',
+            textMain: '#f8fafc',
+            textMuted: '#94a3b8',
+            textLight: '#64748b'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            jakarta: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    #mobile-menu { max-height: 0; transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    #mobile-menu.open { max-height: 400px; }
+  </style>
+</head>
+<body class="bg-bgMain text-textMain font-sans antialiased min-h-screen flex flex-col bg-[radial-gradient(circle_at_10%_20%,rgba(99,102,241,0.04)_0%,transparent_40%),radial-gradient(circle_at_90%_80%,rgba(56,189,248,0.04)_0%,transparent_40%)]">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-bgMain/90 backdrop-blur-md border-b border-white/[0.06] shadow-sm">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-jakarta font-bold text-textMain text-lg tracking-tight flex items-center gap-2">
+        <span class="text-accent"><i class="fa-solid fa-cubes"></i></span> JA Digital
+      </a>
+      <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="index.html" class="text-textMuted hover:text-textMain transition-colors">Home</a>
+        <a href="shop.html" class="text-textMuted hover:text-textMain transition-colors">Shop Now</a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-textMain focus:outline-none text-xl"><i class="fa-solid fa-bars-staggered"></i></button>
+    </nav>
+    <div id="mobile-menu" class="md:hidden bg-bgCard overflow-hidden border-b border-white/[0.06]">
+      <div class="px-6 py-4 flex flex-col space-y-3 font-medium text-sm">
+        <a href="index.html" class="text-textMuted hover:text-textMain">Home</a>
+        <a href="shop.html" class="text-textMuted hover:text-textMain">Shop Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto w-full px-6 py-16 flex-grow space-y-20">
+    <header class="space-y-3 max-w-2xl" data-aos="fade-right">
+      <h1 class="font-jakarta font-extrabold text-3xl md:text-4xl tracking-tight bg-gradient-to-r from-textMain via-primary to-accent bg-clip-text text-transparent">
+        Outreach & Cold Pitching Vault
+      </h1>
+      <p class="text-textMuted text-sm md:text-base font-normal leading-relaxed">
+        Stop waiting for leads to come to you. Master the art of the cold pitch and build a predictable pipeline of high-quality clients.
+      </p>
+    </header>
+
+    <!-- Resources Grid -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up">
+      
+      <a href="cold-email-guide.html" class="block group bg-bgCard border border-white/[0.06] rounded-xl p-6 hover:bg-bgCardHover hover:border-primary transition-all">
+        <h3 class="font-jakarta font-semibold mb-2 group-hover:text-primary transition-colors">The No-Ignore Cold Email: Writing Pitches That Actually Get Replies</h3>
+        <p class="text-textMuted text-sm mb-4">Break through the noise with templates and strategies designed for high response rates.</p>
+        <span class="text-accent text-xs font-bold uppercase">Read Guide →</span>
+      </a>
+
+      <a href="social-selling.html" class="block group bg-bgCard border border-white/[0.06] rounded-xl p-6 hover:bg-bgCardHover hover:border-primary transition-all">
+        <h3 class="font-jakarta font-semibold mb-2 group-hover:text-primary transition-colors">Social Selling: Leveraging LinkedIn and Instagram to Land Clients Organically</h3>
+        <p class="text-textMuted text-sm mb-4">Turn your social profile into a magnet for potential partnerships without the "spammy" feel.</p>
+        <span class="text-accent text-xs font-bold uppercase">Read Guide →</span>
+      </a>
+
+      <a href="follow-up-art.html" class="block group bg-bgCard border border-white/[0.06] rounded-xl p-6 hover:bg-bgCardHover hover:border-primary transition-all">
+        <h3 class="font-jakarta font-semibold mb-2 group-hover:text-primary transition-colors">The Fortune is in the Follow-Up: The Art of the Polite Persistent Chase</h3>
+        <p class="text-textMuted text-sm mb-4">Learn how to stay top-of-mind with prospects without becoming a nuisance.</p>
+        <span class="text-accent text-xs font-bold uppercase">Read Guide →</span>
+      </a>
+
+      <a href="reverse-prospecting.html" class="block group bg-bgCard border border-white/[0.06] rounded-xl p-6 hover:bg-bgCardHover hover:border-primary transition-all">
+        <h3 class="font-jakarta font-semibold mb-2 group-hover:text-primary transition-colors">Reverse Prospecting: How to Find the Right Decision-Makers in Minutes</h3>
+        <p class="text-textMuted text-sm mb-4">Streamline your research process to connect with the right people faster than ever.</p>
+        <span class="text-accent text-xs font-bold uppercase">Read Guide →</span>
+      </a>
+
+      <a href="outreach-mindset.html" class="block group bg-bgCard border border-white/[0.06] rounded-xl p-6 hover:bg-bgCardHover hover:border-primary transition-all">
+        <h3 class="font-jakarta font-semibold mb-2 group-hover:text-primary transition-colors">Overcoming the Numbers Game: Mindset and Metrics for High-Volume Outreach</h3>
+        <p class="text-textMuted text-sm mb-4">Keep your motivation high and your pipeline healthy by mastering the math of growth.</p>
+        <span class="text-accent text-xs font-bold uppercase">Read Guide →</span>
+      </a>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-bgCard border-t border-white/[0.06] text-xs text-textMuted">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <p>&copy; 2026 JA Digital Solutions. All rights reserved.</p>
+      <nav class="flex gap-6 font-medium">
+        <a href="contact.html" class="hover:text-accent transition-colors">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      menuBtn.innerHTML = mobileMenu.classList.contains('open') ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars-staggered"></i>';
+    });
+  </script>
+</body>
+</html>
