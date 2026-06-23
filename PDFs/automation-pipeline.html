@@ -1,153 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Speed to Lead: Automating Your Proposal and Onboarding Pipeline</title>
+    <meta name="description" content="Systemize your proposal and onboarding pipeline so clients sign faster. Practical automation steps for freelancers and VAs." />
+    <meta property="og:title" content="Speed to Lead: Automating Your Proposal and Onboarding Pipeline" />
+    <meta property="og:description" content="Systemize your proposal and onboarding pipeline so clients sign faster." />
+    <meta property="og:type" content="article" />
     <style>
-        :root { --primary: #6366f1; --bg: #f8fafc; --text: #1e293b; --card: #ffffff; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 20px; line-height: 1.7; overflow-x: hidden; }
+        :root {
+            --primary: #6366f1;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --card: #ffffff;
+            --muted: #64748b;
+            --ok: #dcfce7;
+            --warn: #fee2e2;
+        }
+
+        /* Basic page layout */
+        html, body {
+            height: 100%;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            padding: 20px;
+            line-height: 1.7;
+            overflow-x: hidden;
+            margin: 0;
+        }
         .container { max-width: 850px; margin: auto; }
-        .card { 
-            background: var(--card); padding: 30px; border-radius: 12px; margin-bottom: 25px; 
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            opacity: 0; transform: translateX(-50px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+        /* Cards */
+        .card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08);
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
         .card.slide-in { opacity: 1; transform: translateX(0); }
-        h1 { color: var(--primary); text-align: center; margin-bottom: 30px; }
-        h2 { color: var(--primary); margin-top: 0; }
-        .intro-box { font-style: italic; border-left: 4px solid var(--primary); padding-left: 20px; margin-bottom: 30px; background: #fff; padding: 20px; border-radius: 8px; }
+
+        h1 { color: var(--primary); text-align: center; margin-bottom: 30px; font-size: 1.75rem; }
+        h2 { color: var(--primary); margin-top: 0; font-size: 1.125rem; }
+
+        /* Intro box */
+        .intro-box {
+            font-style: italic;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin-bottom: 30px;
+            background: #fff;
+            border-radius: 8px;
+        }
+
+        /* Editor area */
         .editor-box { background: #f1f5f9; padding: 20px; border-radius: 8px; margin-top: 15px; }
-        textarea { width: 100%; height: 100px; margin: 10px 0; border: 1px solid #cbd5e1; padding: 10px; border-radius: 5px; box-sizing: border-box; resize: vertical; }
-        .btn-group { display: flex; gap: 10px; margin-top: 5px; }
-        button { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.2s; }
-        button:active { transform: scale(0.95); }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin: 10px 0;
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            resize: vertical;
+            font: inherit;
+            color: inherit;
+            background: white;
+        }
+        .btn-group { display: flex; gap: 10px; margin-top: 5px; flex-wrap: wrap; }
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.15s ease;
+        }
+        button:hover { transform: translateY(-1px); }
+        button:active { transform: scale(0.98); }
         button.secondary { background: #64748b; }
+        button:focus { outline: none; }
+        :focus-visible { outline: 3px solid rgba(99,102,241,0.35); outline-offset: 3px; border-radius: 6px; }
+
+        /* Table */
         .table-container { overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; margin-top: 20px; min-width: 500px; }
-        th, td { padding: 12px; border: 1px solid #e2e8f0; text-align: left; }
-        th { background: #e2e8f0; }
-        .feedback { margin-top: 10px; font-weight: bold; padding: 10px; border-radius: 5px; display: none; opacity: 0; transition: opacity 0.5s; }
-        .feedback.show { opacity: 1; display: block; }
+        th, td { padding: 12px; border: 1px solid #e2e8f0; text-align: left; vertical-align: top; }
+        th { background: #e2e8f0; font-weight: 700; }
+        caption { text-align: left; font-weight: 700; margin-bottom: 6px; color: var(--muted); }
+
+        /* Feedback / accessible live region */
+        .feedback {
+            margin-top: 10px;
+            font-weight: 700;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .feedback.show { display: block; opacity: 1; }
+
+        /* Small helpers */
+        .sr-only {
+            position: absolute !important;
+            width: 1px; height: 1px;
+            padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0 0 0 0);
+            white-space: nowrap; border: 0;
+        }
+
+        /* Print styles */
+        @page { size: A4; margin: 20mm; }
+        @media print {
+            body { background: #fff; color: #000; }
+            .card { box-shadow: none; border-radius: 0; page-break-inside: avoid; }
+            .btn-group, button, textarea { display: none !important; }
+            .editor-box { background: transparent; padding: 0; }
+            .intro-box { background: transparent; border-left: 4px solid #ccc; }
+            caption { display: none; }
+            table { break-inside: avoid; }
+        }
     </style>
 </head>
 <body>
-
 <div class="container">
     <h1>Speed to Lead: Automating Your Proposal and Onboarding Pipeline</h1>
-    
+
     <div class="card">
         <div class="intro-box">
-            <p>When you are first starting out as a freelancer or Virtual Assistant, it is easy to feel like you are "chasing" your business. You spend your day manually writing emails, hunting for files, and waiting for clients to get back to you. It’s exhausting, and it’s okay to feel like you’re juggling too much.</p>
-            <p>But here is a secret: The professionals aren't working harder; they are working smarter. Automation isn't about being a "robot"—it’s about removing the boring, repetitive parts of your day so you can focus on the real work of helping your clients.</p>
+            <p>When you first start out as a freelancer or Virtual Assistant it’s easy to feel like you’re always “chasing” your business—writing one-off emails, scheduling calls manually, and repeating the same onboarding steps for every client.</p>
+            <p>The professionals aren’t working harder; they’re working smarter. Automation is not about being robotic—it’s about removing repetitive work so you can focus on the high-value tasks that grow your business.</p>
         </div>
     </div>
 
-    <div class="card">
-        <h2>1. The Inquiry Form: Your First Impression</h2>
-        <p><strong>What it is:</strong> A simple form on your website or a link you send to leads.</p>
-        <p><strong>Why it matters:</strong> It stops the "back-and-forth" email tag by gathering key details like budget and project needs upfront.</p>
-        <p><strong>Example:</strong> "To make sure I’m the best fit for your needs, could you fill out this 2-minute form? It helps me prepare for our call so we can hit the ground running."</p>
-        <div class="editor-box">
-            <textarea id="sec1" placeholder="Write your inquiry form introduction or email script here..."></textarea>
-            <div class="btn-group">
-                <button onclick="check('sec1', 'feedback1')">Check My Script</button>
-                <button class="secondary" onclick="copyText('sec1')">Copy Text</button>
+    <main>
+        <section aria-labelledby="sec1-heading" class="card" id="sec1-section">
+            <h2 id="sec1-heading">1. The Inquiry Form: Your First Impression</h2>
+            <p><strong>What it is:</strong> A simple form on your website or a link you send to leads.</p>
+            <p><strong>Why it matters:</strong> It stops the "back-and-forth" email tag by gathering key details like budget and project needs up front.</p>
+            <p><strong>Example:</strong> "To make sure I’m the best fit for your needs, could you complete this 2-minute form? It helps me prepare for our call so we can hit the ground running."</p>
+
+            <div class="editor-box">
+                <label for="sec1" class="sr-only">Inquiry form introduction</label>
+                <textarea id="sec1" name="sec1" placeholder="Write your inquiry form introduction or email script here..."></textarea>
+                <div class="btn-group">
+                    <button type="button" class="check-btn" data-target="sec1" data-feedback="feedback1">Check My Script</button>
+                    <button type="button" class="copy-btn secondary" data-target="sec1" data-feedback="feedback1">Copy Text</button>
+                </div>
+                <div id="feedback1" class="feedback" role="status" aria-live="polite"></div>
             </div>
-            <div id="feedback1" class="feedback"></div>
-        </div>
-    </div>
+        </section>
 
-    <div class="card">
-        <h2>2. The Automated Discovery Call Scheduler</h2>
-        <p><strong>What it is:</strong> Using a tool like Calendly or Cal.com so clients can pick a time that works for both of you.</p>
-        <p><strong>Why it matters:</strong> It eliminates the "When are you free?" dance and respects everyone's time.</p>
-        <p><strong>Example:</strong> "You can grab a time that fits your schedule right here: [Link]. No need to coordinate—it will automatically add the meeting to both our calendars!"</p>
-        <div class="editor-box">
-            <textarea id="sec2" placeholder="Write your scheduling invitation text here..."></textarea>
-            <div class="btn-group">
-                <button onclick="check('sec2', 'feedback2')">Check My Invite</button>
-                <button class="secondary" onclick="copyText('sec2')">Copy Text</button>
+        <section aria-labelledby="sec2-heading" class="card" id="sec2-section">
+            <h2 id="sec2-heading">2. The Automated Discovery Call Scheduler</h2>
+            <p><strong>What it is:</strong> Using a tool like Calendly or Cal.com so clients can pick a time that works for both of you.</p>
+            <p><strong>Why it matters:</strong> It eliminates the "When are you free?" dance and respects everyone's time.</p>
+            <p><strong>Example:</strong> "You can pick a time that fits your schedule here: [Link]. It will automatically add the meeting to both our calendars."</p>
+
+            <div class="editor-box">
+                <label for="sec2" class="sr-only">Scheduling invitation text</label>
+                <textarea id="sec2" name="sec2" placeholder="Write your scheduling invitation text here..."></textarea>
+                <div class="btn-group">
+                    <button type="button" class="check-btn" data-target="sec2" data-feedback="feedback2">Check My Invite</button>
+                    <button type="button" class="copy-btn secondary" data-target="sec2" data-feedback="feedback2">Copy Text</button>
+                </div>
+                <div id="feedback2" class="feedback" role="status" aria-live="polite"></div>
             </div>
-            <div id="feedback2" class="feedback"></div>
-        </div>
-    </div>
+        </section>
 
-    <div class="card">
-        <h2>3. The "Proposal-to-Contract" Bridge</h2>
-        <p><strong>What it is:</strong> Using a platform where your proposal, contract, and invoice live in one place.</p>
-        <p><strong>Why it matters:</strong> When a client can click a button to sign and pay, they are much more likely to say yes immediately.</p>
-        <div class="editor-box">
-            <textarea id="sec3" placeholder="Draft your proposal delivery message here..."></textarea>
-            <div class="btn-group">
-                <button onclick="check('sec3', 'feedback3')">Check My Proposal Note</button>
-                <button class="secondary" onclick="copyText('sec3')">Copy Text</button>
+        <section aria-labelledby="sec3-heading" class="card" id="sec3-section">
+            <h2 id="sec3-heading">3. The "Proposal-to-Contract" Bridge</h2>
+            <p><strong>What it is:</strong> Using a platform where your proposal, contract, and invoice live in one place.</p>
+            <p><strong>Why it matters:</strong> When a client can click a button to sign and pay, they are much more likely to say yes immediately.</p>
+
+            <div class="editor-box">
+                <label for="sec3" class="sr-only">Proposal delivery message</label>
+                <textarea id="sec3" name="sec3" placeholder="Draft your proposal delivery message here..."></textarea>
+                <div class="btn-group">
+                    <button type="button" class="check-btn" data-target="sec3" data-feedback="feedback3">Check My Proposal Note</button>
+                    <button type="button" class="copy-btn secondary" data-target="sec3" data-feedback="feedback3">Copy Text</button>
+                </div>
+                <div id="feedback3" class="feedback" role="status" aria-live="polite"></div>
             </div>
-            <div id="feedback3" class="feedback"></div>
-        </div>
-    </div>
+        </section>
 
-    <div class="card">
-        <h2>4. The Automated Welcome Packet</h2>
-        <p><strong>What it is:</strong> An automated email that triggers the moment the contract is signed.</p>
-        <p><strong>Why it matters:</strong> It builds instant confidence and keeps your momentum going.</p>
-        <p><strong>Example:</strong> "Welcome aboard! Here is a quick link to our shared project folder and a list of the 3 things I need from you to begin our work on Monday."</p>
-        <div class="editor-box">
-            <textarea id="sec4" placeholder="Draft your welcome email here..."></textarea>
-            <div class="btn-group">
-                <button onclick="check('sec4', 'feedback4')">Check My Welcome Email</button>
-                <button class="secondary" onclick="copyText('sec4')">Copy Text</button>
+        <section aria-labelledby="sec4-heading" class="card" id="sec4-section">
+            <h2 id="sec4-heading">4. The Automated Welcome Packet</h2>
+            <p><strong>What it is:</strong> An automated email that triggers the moment the contract is signed.</p>
+            <p><strong>Why it matters:</strong> It builds instant confidence and keeps your momentum going.</p>
+            <p><strong>Example:</strong> "Welcome aboard! Here is a quick link to our shared project folder and a list of the 3 things I need from you to begin our work on Monday."</p>
+
+            <div class="editor-box">
+                <label for="sec4" class="sr-only">Welcome email draft</label>
+                <textarea id="sec4" name="sec4" placeholder="Draft your welcome email here..."></textarea>
+                <div class="btn-group">
+                    <button type="button" class="check-btn" data-target="sec4" data-feedback="feedback4">Check My Welcome Email</button>
+                    <button type="button" class="copy-btn secondary" data-target="sec4" data-feedback="feedback4">Copy Text</button>
+                </div>
+                <div id="feedback4" class="feedback" role="status" aria-live="polite"></div>
             </div>
-            <div id="feedback4" class="feedback"></div>
-        </div>
-    </div>
+        </section>
 
-    <div class="card">
-        <h2>The "Speed to Lead" Workflow</h2>
-        <div class="table-container">
-            <table>
-                <tr><th>Step</th><th>How to Automate</th><th>Why It Saves You Stress</th></tr>
-                <tr><td>Lead Inquiry</td><td>Contact form</td><td>All info in one place.</td></tr>
-                <tr><td>Scheduling</td><td>Calendly/Cal.com</td><td>No more email tag.</td></tr>
-                <tr><td>Proposal</td><td>All-in-one CRM</td><td>Professional and easy.</td></tr>
-                <tr><td>Onboarding</td><td>Email templates</td><td>Never forget next steps.</td></tr>
-            </table>
-        </div>
-    </div>
+        <section aria-labelledby="workflow-heading" class="card" id="workflow-section">
+            <h2 id="workflow-heading">The "Speed to Lead" Workflow</h2>
+            <div class="table-container" role="table" aria-labelledby="workflow-heading">
+                <table>
+                    <caption>Speed to lead workflow steps</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Step</th>
+                            <th scope="col">How to Automate</th>
+                            <th scope="col">Why It Saves You Stress</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Lead Inquiry</td><td>Contact form</td><td>All info in one place.</td></tr>
+                        <tr><td>Scheduling</td><td>Calendly / Cal.com</td><td>No more email tag.</td></tr>
+                        <tr><td>Proposal</td><td>All-in-one CRM or proposal tool</td><td>Professional and easy.</td></tr>
+                        <tr><td>Onboarding</td><td>Email templates and automated welcome packets</td><td>Never forget next steps.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-    <div class="card">
-        <p><em>Automation is like a muscle—you don't have to build the whole system at once. Start small, stay consistent, and remember that every system you build is one less thing to worry about. You’ve got this!</em></p>
-        <h3>Which part of your current "client process" takes up the most time—is it the initial emails, the scheduling, or getting the paperwork sorted?</h3>
-    </div>
+        <section class="card" aria-labelledby="closing-heading">
+            <h3 id="closing-heading">Final thoughts & question</h3>
+            <p>Automation is like a muscle—you don't have to build the whole system at once. Start small, stay consistent, and every system you build is one less thing to worry about.</p>
+            <p><strong>Question:</strong> Which part of your current client process takes up the most time — initial emails, scheduling, or paperwork? Use the boxes above to draft and save short replies you can reuse.</p>
+        </section>
+    </main>
 </div>
 
 <script>
-    window.onload = () => {
-        document.querySelectorAll('textarea').forEach(el => el.value = localStorage.getItem(el.id) || '');
-        document.querySelectorAll('.card').forEach(c => observer.observe(c));
-    };
-
+/*
+  Enhanced scripting:
+  - Use DOMContentLoaded (no need to wait for images)
+  - Guard localStorage access
+  - Use navigator.clipboard when available
+  - Provide accessible feedback via aria-live regions (the .feedback elements)
+  - IntersectionObserver for animations
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    // Restore saved textarea values safely
     document.querySelectorAll('textarea').forEach(el => {
-        el.addEventListener('input', (e) => localStorage.setItem(e.target.id, e.target.value));
+        try {
+            const saved = localStorage.getItem(el.id);
+            if (saved) el.value = saved;
+        } catch (err) {
+            // localStorage may be disabled; ignore silently
+        }
     });
 
+    // IntersectionObserver for slide-in animation
     const observer = new IntersectionObserver(entries => {
-        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('slide-in'); });
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('slide-in');
+        });
     }, { threshold: 0.1 });
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));
 
-    function check(id, feedbackId) {
-        const val = document.getElementById(id).value;
+    // Save on input (guard localStorage)
+    document.querySelectorAll('textarea').forEach(el => {
+        el.addEventListener('input', (e) => {
+            try {
+                localStorage.setItem(e.target.id, e.target.value);
+            } catch (err) {
+                // ignore
+            }
+        });
+    });
+
+    // Helper: show feedback in aria-live region
+    function showFeedback(feedbackId, message, ok = true) {
         const fb = document.getElementById(feedbackId);
-        fb.classList.add("show");
-        if(val.length < 50) { fb.style.background = "#fee2e2"; fb.innerText = "⚠️ This is a bit brief! Try to add a professional, welcoming touch."; }
-        else { fb.style.background = "#dcfce7"; fb.innerText = "✅ Great! You're on your way to a more efficient workflow."; }
+        if (!fb) return;
+        fb.textContent = message;
+        fb.style.background = ok ? getComputedStyle(document.documentElement).getPropertyValue('--ok') || '#dcfce7' : getComputedStyle(document.documentElement).getPropertyValue('--warn') || '#fee2e2';
+        fb.classList.add('show');
+        // hide after 4s
+        clearTimeout(fb._timer);
+        fb._timer = setTimeout(() => fb.classList.remove('show'), 4000);
     }
 
-    function copyText(id) {
-        document.getElementById(id).select();
-        document.execCommand("copy");
-        alert("Text copied to clipboard!");
+    // Copy functionality with modern API and fallback
+    async function copyTextFrom(targetId, feedbackId) {
+        const textarea = document.getElementById(targetId);
+        const text = textarea ? textarea.value : '';
+        if (!text) {
+            showFeedback(feedbackId, '⚠️ Nothing to copy.', false);
+            return;
+        }
+
+        if (navigator.clipboard && window.isSecureContext) {
+            try {
+                await navigator.clipboard.writeText(text);
+                showFeedback(feedbackId, '✅ Text copied to clipboard.');
+            } catch (err) {
+                // fallback to execCommand
+                fallbackCopy(textarea, feedbackId);
+            }
+        } else {
+            fallbackCopy(textarea, feedbackId);
+        }
     }
+
+    function fallbackCopy(textarea, feedbackId) {
+        try {
+            textarea.select();
+            const ok = document.execCommand && document.execCommand('copy');
+            window.getSelection && window.getSelection().removeAllRanges();
+            if (ok) showFeedback(feedbackId, '✅ Text copied to clipboard.');
+            else showFeedback(feedbackId, '⚠️ Copy not supported; please copy manually.', false);
+        } catch (err) {
+            showFeedback(feedbackId, '⚠️ Copy not supported; please copy manually.', false);
+        }
+    }
+
+    // Simple content length check (improve messages)
+    function checkText(targetId, feedbackId) {
+        const textarea = document.getElementById(targetId);
+        if (!textarea) return;
+        const val = textarea.value.trim();
+        if (val.length < 50) {
+            showFeedback(feedbackId, '⚠️ This is a bit brief. Try adding a professional, welcoming touch (50+ characters).', false);
+        } else {
+            showFeedback(feedbackId, '✅ Great! This looks like a usable script.');
+        }
+    }
+
+    // Event delegation for buttons
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('button');
+        if (!btn) return;
+
+        // copy button
+        if (btn.classList.contains('copy-btn')) {
+            const target = btn.getAttribute('data-target');
+            const feedback = btn.getAttribute('data-feedback');
+            if (target && feedback) copyTextFrom(target, feedback);
+            return;
+        }
+
+        // check button
+        if (btn.classList.contains('check-btn')) {
+            const target = btn.getAttribute('data-target');
+            const feedback = btn.getAttribute('data-feedback');
+            if (target && feedback) checkText(target, feedback);
+            return;
+        }
+    });
+});
 </script>
 </body>
 </html>
