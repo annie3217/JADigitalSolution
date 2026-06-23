@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Psychology of Pricing: How to Present Your Rates</title>
+    <style>
+        :root { --primary: #6366f1; --bg: #f8fafc; --text: #1e293b; --card: #ffffff; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 20px; line-height: 1.7; overflow-x: hidden; }
+        .container { max-width: 850px; margin: auto; }
+        .card { 
+            background: var(--card); padding: 30px; border-radius: 12px; margin-bottom: 25px; 
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            opacity: 0; transform: translateX(-50px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .card.slide-in { opacity: 1; transform: translateX(0); }
+        h1 { color: var(--primary); text-align: center; margin-bottom: 30px; }
+        h2 { color: var(--primary); margin-top: 0; }
+        .intro-box { font-style: italic; border-left: 4px solid var(--primary); padding-left: 20px; margin-bottom: 30px; background: #fff; padding: 20px; border-radius: 8px; }
+        .editor-box { background: #f1f5f9; padding: 20px; border-radius: 8px; margin-top: 15px; }
+        textarea { width: 100%; height: 100px; margin: 10px 0; border: 1px solid #cbd5e1; padding: 10px; border-radius: 5px; box-sizing: border-box; resize: vertical; }
+        .btn-group { display: flex; gap: 10px; margin-top: 5px; }
+        button { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.2s; }
+        button:active { transform: scale(0.95); }
+        button.secondary { background: #64748b; }
+        .table-container { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; min-width: 500px; }
+        th, td { padding: 12px; border: 1px solid #e2e8f0; text-align: left; }
+        th { background: #e2e8f0; }
+        .feedback { margin-top: 10px; font-weight: bold; padding: 10px; border-radius: 5px; display: none; opacity: 0; transition: opacity 0.5s; }
+        .feedback.show { opacity: 1; display: block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>The Psychology of Pricing: How to Present Your Rates Without Scaring Clients Away</h1>
+    
+    <div class="card">
+        <div class="intro-box">
+            <p>Talking about money is, for many of us, the most nerve-wracking part of freelancing. You might find yourself thinking, "What if my rates are too high?" or "What if they think I’m not worth it?"</p>
+            <p>Please know that this fear is completely normal. When you are just starting out, your price feels like a reflection of your self-worth, but I want you to shift that perspective: Your price is not a measure of your value as a human; it is simply a professional exchange for the time, skill, and relief you provide to your client.</p>
+            <p>Let’s look at how to present your rates in a way that feels confident, transparent, and attractive to your future clients.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>1. Stop Selling Time; Start Selling Outcomes</h2>
+        <p><strong>What it is:</strong> Moving away from an "hourly rate" mindset toward "value-based" or "package-based" pricing.</p>
+        <p><strong>Why it matters:</strong> When you charge by the hour, you are essentially punishing yourself for being efficient. When you charge per project or per package, you are paid for the result you deliver.</p>
+        <p><strong>How to do it:</strong> Instead of saying, "I charge $20/hour," say, "My Basic Support Package is $300 per month."</p>
+        <div class="editor-box">
+            <textarea id="sec1" placeholder="Example: My 'Content Management Package' includes scheduling 12 social media posts and responding to all comments. This ensures your online presence stays active and engaging, allowing you to focus on your product development."></textarea>
+            <div class="btn-group">
+                <button onclick="check('sec1', 'feedback1')">Check My Pitch</button>
+                <button class="secondary" onclick="copyText('sec1')">Copy Text</button>
+            </div>
+            <div id="feedback1" class="feedback"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>2. Use the "Decoy Effect" (Three-Tiered Pricing)</h2>
+        <p><strong>What it is:</strong> Offering three packages (Basic, Standard, Premium) rather than just one price.</p>
+        <p><strong>Why it matters:</strong> It removes the pressure of "Yes" or "No" and helps the client focus on which option is best for their current needs.</p>
+        <p><strong>How to do it:</strong> Create a low entry point, a "best value" middle tier, and a luxury "done-for-you" premium tier.</p>
+        <div class="editor-box">
+            <textarea id="sec2" placeholder="Basic: [Price/Details]... Standard (Best Value): [Price/Details]... Premium: [Price/Details]..."></textarea>
+            <div class="btn-group">
+                <button onclick="check('sec2', 'feedback2')">Check My Packages</button>
+                <button class="secondary" onclick="copyText('sec2')">Copy Text</button>
+            </div>
+            <div id="feedback2" class="feedback"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>3. The Power of "Anchoring"</h2>
+        <p><strong>What it is:</strong> Presenting your higher-tier package first to set a mental "anchor" for what your services are worth.</p>
+        <p><strong>Why it matters:</strong> If your premium package is $1,000, your standard package at $600 suddenly seems like a very reasonable, affordable deal.</p>
+        <p><strong>How to do it:</strong> List your packages from most expensive to least expensive in your proposal.</p>
+        <div class="editor-box">
+            <textarea id="sec3" placeholder="I have outlined three options for your project, starting with our comprehensive Premium service..."></textarea>
+            <div class="btn-group">
+                <button onclick="check('sec3', 'feedback3')">Check My Anchoring</button>
+                <button class="secondary" onclick="copyText('sec3')">Copy Text</button>
+            </div>
+            <div id="feedback3" class="feedback"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>4. Be Transparent, Not Apologetic</h2>
+        <p><strong>What it is:</strong> Listing your prices clearly and cleanly.</p>
+        <p><strong>Why it matters:</strong> Hiding your pricing or acting shy signals that you aren't sure you’re worth it. If you don't believe in your price, they won't either.</p>
+        <p><strong>How to do it:</strong> Simply state the investment required to work with you.</p>
+        <div class="editor-box">
+            <textarea id="sec4" placeholder="To move forward with this project, the investment is $500. This includes all the items listed in the Scope of Work, as well as a weekly check-in call to ensure we are meeting your goals."></textarea>
+            <div class="btn-group">
+                <button onclick="check('sec4', 'feedback4')">Check My Clarity</button>
+                <button class="secondary" onclick="copyText('sec4')">Copy Text</button>
+            </div>
+            <div id="feedback4" class="feedback"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Summary: A Quick Pricing Guide</h2>
+        <div class="table-container">
+            <table>
+                <tr><th>Strategy</th><th>Why It Works</th></tr>
+                <tr><td>Package Pricing</td><td>Focuses on results, not hours.</td></tr>
+                <tr><td>Three-Tier Options</td><td>Gives clients choice and control.</td></tr>
+                <tr><td>Anchoring</td><td>Makes your preferred package look like the best deal.</td></tr>
+                <tr><td>Confidence</td><td>Clients pay for experts who know their worth.</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <p><em>Remember, you are allowed to change your prices as you grow. If a client says your prices are too high, it is not a rejection of your character; it just means they aren't the right fit. Keep refining your skills and your pitch until you find the clients who recognize the incredible value you bring to the table. You are doing great work—stay the course!</em></p>
+        <h3>What is the biggest fear that comes to your mind when you think about sending a price quote to a new potential client?</h3>
+    </div>
+</div>
+
+<script>
+    window.onload = () => {
+        document.querySelectorAll('textarea').forEach(el => el.value = localStorage.getItem(el.id) || '');
+        document.querySelectorAll('.card').forEach(c => observer.observe(c));
+    };
+
+    document.querySelectorAll('textarea').forEach(el => {
+        el.addEventListener('input', (e) => localStorage.setItem(e.target.id, e.target.value));
+    });
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('slide-in'); });
+    }, { threshold: 0.1 });
+
+    function check(id, feedbackId) {
+        const val = document.getElementById(id).value;
+        const fb = document.getElementById(feedbackId);
+        fb.classList.add("show");
+        if(val.length < 50) { fb.style.background = "#fee2e2"; fb.innerText = "⚠️ Try adding more detail to help the client see the value behind the numbers."; }
+        else { fb.style.background = "#dcfce7"; fb.innerText = "✅ Confident and clear! Keep focusing on the outcomes you provide."; }
+    }
+
+    function copyText(id) {
+        document.getElementById(id).select();
+        document.execCommand("copy");
+        alert("Text copied to clipboard!");
+    }
+</script>
+</body>
+</html>

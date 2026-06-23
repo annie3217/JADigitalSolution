@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Flags in Client Agreements: What to Look For Before You Sign</title>
+    <style>
+        :root { --primary: #6366f1; --bg: #f8fafc; --text: #1e293b; --card: #ffffff; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 20px; line-height: 1.7; overflow-x: hidden; }
+        .container { max-width: 850px; margin: auto; }
+        .card { 
+            background: var(--card); padding: 30px; border-radius: 12px; margin-bottom: 25px; 
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            opacity: 0; transform: translateX(-50px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .card.slide-in { opacity: 1; transform: translateX(0); }
+        h1 { color: var(--primary); text-align: center; margin-bottom: 30px; }
+        h2 { color: var(--primary); margin-top: 0; }
+        .intro-box { font-style: italic; border-left: 4px solid var(--primary); padding-left: 20px; margin-bottom: 30px; background: #fff; padding: 20px; border-radius: 8px; }
+        .editor-box { background: #f1f5f9; padding: 20px; border-radius: 8px; margin-top: 15px; }
+        textarea { width: 100%; height: 100px; margin: 10px 0; border: 1px solid #cbd5e1; padding: 10px; border-radius: 5px; box-sizing: border-box; resize: vertical; }
+        .btn-group { display: flex; gap: 10px; margin-top: 5px; }
+        button { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.2s; }
+        button:active { transform: scale(0.95); }
+        button.secondary { background: #64748b; }
+        .table-container { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; min-width: 500px; }
+        th, td { padding: 12px; border: 1px solid #e2e8f0; text-align: left; }
+        th { background: #e2e8f0; }
+        .feedback { margin-top: 10px; font-weight: bold; padding: 10px; border-radius: 5px; display: none; opacity: 0; transition: opacity 0.5s; }
+        .feedback.show { opacity: 1; display: block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Red Flags in Client Agreements: What to Look For Before You Sign</h1>
+    
+    <div class="card">
+        <div class="intro-box">
+            <p>It is incredibly exciting to land your first few clients. When that contract finally lands in your inbox, your first instinct might be to sign it as quickly as possible—you don’t want to seem "difficult," and you certainly don't want to lose the opportunity.</p>
+            <p>I want you to take a deep breath. Protecting yourself is not being "difficult"; it is being a professional. A contract is a two-way street, and it should be just as safe for you as it is for the client. If a potential client presents a contract that feels off, it is okay to pause, ask questions, or even walk away.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>1. The "Open-Ended" Scope (The "Infinite Loop")</h2>
+        <p><strong>What it is:</strong> Vague language like "and other duties as assigned."</p>
+        <p><strong>Why it matters:</strong> This is the quickest way to burnout. It allows the client to add unlimited tasks to your plate while paying you for a limited scope.</p>
+        <p><strong>The Fix:</strong> "I’d love to help out where needed! Could we clarify which specific tasks fall under 'other duties' so I can ensure I have the capacity to handle them effectively?"</p>
+        <div class="editor-box">
+            <textarea id="sec1" placeholder="Draft your response here..."></textarea>
+            <div class="btn-group">
+                <button onclick="check('sec1', 'feedback1')">Check My Response</button>
+                <button class="secondary" onclick="copyText('sec1')">Copy Text</button>
+            </div>
+            <div id="feedback1" class="feedback"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>2. The "Ownership of Everything" (The "Work-for-Hire" Trap)</h2>
+        <p><strong>What it is:</strong> A clause claiming the client owns your pre-existing templates, processes, or methods.</p>
+        <p><strong>Why it matters:</strong> You don't want to sign away the "secret sauce" you've spent years building for your business.</p>
+        <p><strong>The Fix:</strong> "I’m happy to assign ownership of the final deliverables to you. I’d like to add a note that my pre-existing templates and methodologies remain my property."</p>
+        <div class="editor-box">
+            <textarea id="sec2" placeholder="Draft your response here..."></textarea>
+            <div class="btn-group">
+                <button onclick="check('sec2', 'feedback2')">Check My Response</button>
+                <button class="secondary" onclick="copyText('sec2')">Copy Text</button>
+            </div>
+            <div id="feedback2" class="feedback"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>3. The "Unfair Termination"</h2>
+        <p><strong>What it is:</strong> Firing you without paying for work already completed.</p>
+        <p><strong>Why it matters:</strong> You could do weeks of work and end up with zero payment.</p>
+        <p><strong>The Fix:</strong> "I’ve reviewed the termination clause. Can we add a line ensuring that any work completed and approved up to the date of termination will be invoiced and paid for?"</p>
+        <div class="editor-box">
+            <textarea id="sec3" placeholder="Draft your response here..."></textarea>
+            <div class="btn-group">
+                <button onclick="check('sec3', 'feedback3')">Check My Response</button>
+                <button class="secondary" onclick="copyText('sec3')">Copy Text</button>
+            </div>
+            <div id="feedback3" class="feedback"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>4. The "Immediate Access" Requirement</h2>
+        <p><strong>What it is:</strong> Demanding 24/7 availability or instant responses.</p>
+        <p><strong>Why it matters:</strong> You are a freelancer, not an on-call emergency room doctor. This is a recipe for exhaustion.</p>
+        <p><strong>The Fix:</strong> "I pride myself on great communication. To ensure I’m giving my best work, I typically respond within 24 business hours. Does that work for our flow?"</p>
+        <div class="editor-box">
+            <textarea id="sec4" placeholder="Draft your response here..."></textarea>
+            <div class="btn-group">
+                <button onclick="check('sec4', 'feedback4')">Check My Response</button>
+                <button class="secondary" onclick="copyText('sec4')">Copy Text</button>
+            </div>
+            <div id="feedback4" class="feedback"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Red Flag Checklist: The "Pause" Test</h2>
+        <div class="table-container">
+            <table>
+                <tr><th>Red Flag</th><th>Why You Should Be Concerned</th></tr>
+                <tr><td>Vague "Etc." Duties</td><td>Leads to unpaid, unlimited work.</td></tr>
+                <tr><td>No End Date</td><td>Keeps you locked in a project indefinitely.</td></tr>
+                <tr><td>One-Sided Termination</td><td>You might not get paid for your effort.</td></tr>
+                <tr><td>Indemnification</td><td>Could make you legally liable for client errors.</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <p><em>Trust your gut. If something makes your stomach churn, you aren't being picky—you are being smart. A good client will respect you more when you stand up for your boundaries.</em></p>
+        <h3>Have you ever felt unsure about a request a client made, or are you worried about how to ask for a change in a contract without sounding like you're being "difficult"?</h3>
+    </div>
+</div>
+
+<script>
+    window.onload = () => {
+        document.querySelectorAll('textarea').forEach(el => el.value = localStorage.getItem(el.id) || '');
+        document.querySelectorAll('.card').forEach(c => observer.observe(c));
+    };
+
+    document.querySelectorAll('textarea').forEach(el => {
+        el.addEventListener('input', (e) => localStorage.setItem(e.target.id, e.target.value));
+    });
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('slide-in'); });
+    }, { threshold: 0.1 });
+
+    function check(id, feedbackId) {
+        const val = document.getElementById(id).value;
+        const fb = document.getElementById(feedbackId);
+        fb.classList.add("show");
+        if(val.length < 30) { fb.style.background = "#fee2e2"; fb.innerText = "⚠️ Try to be more specific and firm in your professional request."; }
+        else { fb.style.background = "#dcfce7"; fb.innerText = "✅ Professional and firm! This is a great way to protect your business."; }
+    }
+
+    function copyText(id) {
+        document.getElementById(id).select();
+        document.execCommand("copy");
+        alert("Text copied to clipboard!");
+    }
+</script>
+</body>
+</html>
